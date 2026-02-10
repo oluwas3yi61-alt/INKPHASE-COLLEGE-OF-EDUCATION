@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inkphase University - Government-Accredited Institution</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0a1e3f',
+                        burgundy: '#7a1f3d',
+                        gold: '#d4af37',
+                        lightGold: '#f5e9c9',
+                        offwhite: '#f8f9fa'
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .transition-banner {
+            background: linear-gradient(135deg, #7a1f3d 0%, #0a1e3f 100%);
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 10px rgba(212, 175, 55, 0.3); }
+            to { box-shadow: 0 0 20px rgba(212, 175, 55, 0.6); }
+        }
+        .faculty-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .news-card:hover {
+            border-left: 4px solid #d4af37;
+        }
+        .department-list {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .department-list.open {
+            max-height: 500px;
+        }
+        .mobile-menu {
+            display: none;
+        }
+        .mobile-menu.open {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-offwhite font-sans text-gray-800">
+    <!-- Header with Navigation -->
+    <header class="bg-navy text-white sticky top-0 z-50 shadow-lg">
+        <!-- Government Seal Banner -->
+        <div class="transition-banner py-2 px-4 text-center">
+            <div class="flex items-center justify-center space-x-2">
+                <i class="fas fa-award text-xl text-gold"></i>
+                <span class="font-semibold">Officially Adopted by Government • Transition to University Status Achieved</span>
+                <i class="fas fa-award text-xl text-gold"></i>
+            </div>
+        </div>
+        
+        <!-- Main Header -->
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                    <div class="bg-white rounded-full p-2">
+                        <svg class="w-12 h-12 text-navy" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-serif font-bold">Inkphase University</h1>
+                        <p class="text-sm text-lightGold">Government-Accredited Institution</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="#" class="hover:text-gold transition">Home</a></li>
+                        <li class="relative group">
+                            <a href="#" class="hover:text-gold transition flex items-center">
+                                Academics <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </a>
+                            <div class="absolute hidden group-hover:block bg-white text-navy rounded-lg shadow-lg w-64 mt-2 py-2">
+                                <a href="#" class="block px-4 py-2 hover:bg-lightGold">Faculties</a>
+                                <a href="#" class="block px-4 py-2 hover:bg-lightGold">Departments</a>
+                                <a href="#" class="block px-4 py-2 hover:bg-lightGold">Course Catalog</a>
+                                <a href="#" class="block px-4 py-2 hover:bg-lightGold">Academic Calendar</a>
+                            </div>
+                        </li>
+                        <li class="relative group">
+                            <a href="#" class="hover:text-gold transition flex items-center">
+                                Administration <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </a>
+                            <div class="absolute hidden group-hover:block bg-white text-navy rounded-lg shadow-lg w-64 mt-2 py-2">
+                                <a href="#" class="block px-4 py-2 hover:bg-lightGold">Leadership</a>
+                                <a href="#" class="block px-4 py-2 hover:bg-lightGold">Governing Council</a>
+                                <a href="#" class="block px-4 py-2 hover:bg-lightGold">Tenders</a>
+                                <a href="#" class="block px-4 py-2 hover:bg-lightGold">Vacancies</a>
+                            </div>
+                        </li>
+                        <li><a href="#" class="hover:text-gold transition">Admissions</a></li>
+                        <li><a href="#" class="hover:text-gold transition">Library</a></li>
+                        <li><a href="#" class="hover:text-gold transition">Student Portal</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuButton" class="md:hidden text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="mobile-menu md:hidden mt-4 pb-4">
+                <ul class="space-y-2">
+                    <li><a href="#" class="block py-2 hover:text-gold">Home</a></li>
+                    <li class="border-t border-gray-700 pt-2">
+                        <a href="#" class="block py-2 hover:text-gold flex justify-between items-center">
+                            Academics <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="ml-4 space-y-1 mt-1">
+                            <li><a href="#" class="block py-1 text-sm hover:text-gold">Faculties</a></li>
+                            <li><a href="#" class="block py-1 text-sm hover:text-gold">Departments</a></li>
+                            <li><a href="#" class="block py-1 text-sm hover:text-gold">Course Catalog</a></li>
+                            <li><a href="#" class="block py-1 text-sm hover:text-gold">Academic Calendar</a></li>
+                        </ul>
+                    </li>
+                    <li class="border-t border-gray-700 pt-2">
+                        <a href="#" class="block py-2 hover:text-gold flex justify-between items-center">
+                            Administration <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="ml-4 space-y-1 mt-1">
+                            <li><a href="#" class="block py-1 text-sm hover:text-gold">Leadership</a></li>
+                            <li><a href="#" class="block py-1 text-sm hover:text-gold">Governing Council</a></li>
+                            <li><a href="#" class="block py-1 text-sm hover:text-gold">Tenders</a></li>
+                            <li><a href="#" class="block py-1 text-sm hover:text-gold">Vacancies</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="block py-2 hover:text-gold">Admissions</a></li>
+                    <li><a href="#" class="block py-2 hover:text-gold">Library</a></li>
+                    <li><a href="#" class="block py-2 hover:text-gold">Student Portal</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-navy to-burgundy text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-serif font-bold mb-6">Inkphase University</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">A Government-Accredited Institution of Excellence</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="bg-gold text-navy px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition">Apply Now</a>
+                <a href="#" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-navy transition">Take a Tour</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Government Adoption Story -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-serif font-bold text-navy mb-6">Our Government Partnership Journey</h2>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Inkphase College of Education began its journey as a pioneering institution in teacher education and development. 
+                    Since its founding, the college has maintained a commitment to academic excellence and community service. 
+                    In recognition of our outstanding contributions to education and our robust infrastructure, the state government 
+                    has officially adopted us as a university. This transition represents a significant milestone that enhances our 
+                    capacity to offer advanced degrees, conduct cutting-edge research, and expand our impact on national development. 
+                    As Inkphase University, we continue our mission with renewed vigor, backed by government support and accountability.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculties Section -->
+    <section class="py-16 bg-offwhite">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-serif font-bold text-center text-navy mb-12">Our Faculties</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Faculty Cards -->
+                <div class="faculty-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+                    <div class="bg-navy p-6 text-center">
+                        <i class="fas fa-flask text-4xl text-gold mb-4"></i>
+                        <h3 class="text-xl font-bold text-white">Faculty of Science</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm text-gray-600">Departments</span>
+                            <button class="toggle-departments text-gold hover:text-burgundy" data-target="science-depts">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <ul class="department-list text-sm text-gray-700 space-y-2" id="science-depts">
+                            <li>Mathematics</li>
+                            <li>Physics</li>
+                            <li>Chemistry</li>
+                            <li>Biology</li>
+                            <li>Computer Science</li>
+                        </ul>
+                        <a href="#" class="mt-4 block text-center bg-navy text-white py-2 rounded-lg hover:bg-burgundy transition">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="faculty-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+                    <div class="bg-burgundy p-6 text-center">
+                        <i class="fas fa-book-open text-4xl text-gold mb-4"></i>
+                        <h3 class="text-xl font-bold text-white">Faculty of Arts</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm text-gray-600">Departments</span>
+                            <button class="toggle-departments text-gold hover:text-navy" data-target="arts-depts">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <ul class="department-list text-sm text-gray-700 space-y-2" id="arts-depts">
+                            <li>English Language</li>
+                            <li>History</li>
+                            <li>Philosophy</li>
+                            <li>Religious Studies</li>
+                            <li>French</li>
+                        </ul>
+                        <a href="#" class="mt-4 block text-center bg-burgundy text-white py-2 rounded-lg hover:bg-navy transition">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="faculty-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+                    <div class="bg-gold p-6 text-center">
+                        <i class="fas fa-graduation-cap text-4xl text-navy mb-4"></i>
+                        <h3 class="text-xl font-bold text-navy">Faculty of Education</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm text-gray-600">Departments</span>
+                            <button class="toggle-departments text-navy hover:text-burgundy" data-target="edu-depts">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <ul class="department-list text-sm text-gray-700 space-y-2" id="edu-depts">
+                            <li>Curriculum Studies</li>
+                            <li>Educational Technology</li>
+                            <li>Guidance & Counseling</li>
+                            <li>Science Education</li>
+                            <li>Early Childhood Education</li>
+                        </ul>
+                        <a href="#" class="mt-4 block text-center bg-gold text-navy py-2 rounded-lg hover:bg-opacity-90 transition">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campus Pulse (News & Events) -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-serif font-bold text-center text-navy mb-12">Campus Pulse</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- News Items -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-navy mb-6 flex items-center">
+                        <i class="fas fa-newspaper mr-3 text-gold"></i> Latest News
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="news-card bg-white p-6 rounded-lg shadow-md border-l-4 border-gold">
+                            <h4 class="font-bold text-lg text-navy">University Launches New Research Initiative</h4>
+                            <p class="text-gray-600 text-sm mt-2">Government funding supports innovation in sustainable agriculture and renewable energy technologies.</p>
+                            <p class="text-xs text-gray-500 mt-3">Posted: June 15, 2023</p>
+                        </div>
+                        <div class="news-card bg-white p-6 rounded-lg shadow-md border-l-4 border-gold">
+                            <h4 class="font-bold text-lg text-navy">Convocation Ceremony Dates Announced</h4>
+                            <p class="text-gray-600 text-sm mt-2">Join us for the grand celebration of academic achievements on July 20, 2023.</p>
+                            <p class="text-xs text-gray-500 mt-3">Posted: June 10, 2023</p>
+                        </div>
+                        <div class="news-card bg-white p-6 rounded-lg shadow-md border-l-4 border-gold">
+                            <h4 class="font-bold text-lg text-navy">International Partnership Agreement</h4>
+                            <p class="text-gray-600 text-sm mt-2">Collaboration with European universities to enhance academic exchange programs.</p>
+                            <p class="text-xs text-gray-500 mt-3">Posted: June 5, 2023</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Events -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-navy mb-6 flex items-center">
+                        <i class="fas fa-calendar-alt mr-3 text-gold"></i> Upcoming Events
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="news-card bg-white p-6 rounded-lg shadow-md border-l-4 border-burgundy">
+                            <h4 class="font-bold text-lg text-navy">Research Conference 2023</h4>
+                            <p class="text-gray-600 text-sm mt-2">Annual gathering of researchers and academics from across the region.</p>
+                            <p class="text-xs text-gray-500 mt-3"><i class="fas fa-clock mr-2"></i> June 25, 2023 | 9:00 AM</p>
+                        </div>
+                        <div class="news-card bg-white p-6 rounded-lg shadow-md border-l-4 border-burgundy">
+                            <h4 class="font-bold text-lg text-navy">Guest Lecture Series</h4>
+                            <p class="text-gray-600 text-sm mt-2">Distinguished Professor Smith on "Future of Digital Education"</p>
+                            <p class="text-xs text-gray-500 mt-3"><i class="fas fa-clock mr-2"></i> July 2, 2023 | 2:00 PM</p>
+                        </div>
+                        <div class="news-card bg-white p-6 rounded-lg shadow-md border-l-4 border-burgundy">
+                            <h4 class="font-bold text-lg text-navy">Career Fair</h4>
+                            <p class="text-gray-600 text-sm mt-2">Connect with potential employers and explore career opportunities.</p>
+                            <p class="text-xs text-gray-500 mt-3"><i class="fas fa-clock mr-2"></i> July 8, 2023 | 10:00 AM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="py-16 bg-navy text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-serif font-bold text-center mb-12">Quick Access</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <a href="#" class="bg-white bg-opacity-10 p-6 rounded-lg text-center hover:bg-opacity-20 transition">
+                    <i class="fas fa-user-graduate text-3xl text-gold mb-3"></i>
+                    <h3 class="font-semibold">Student Portal</h3>
+                </a>
+                <a href="#" class="bg-white bg-opacity-10 p-6 rounded-lg text-center hover:bg-opacity-20 transition">
+                    <i class="fas fa-chalkboard-teacher text-3xl text-gold mb-3"></i>
+                    <h3 class="font-semibold">Staff Portal</h3>
+                </a>
+                <a href="#" class="bg-white bg-opacity-10 p-6 rounded-lg text-center hover:bg-opacity-20 transition">
+                    <i class="fas fa-book text-3xl text-gold mb-3"></i>
+                    <h3 class="font-semibold">Library</h3>
+                </a>
+                <a href="#" class="bg-white bg-opacity-10 p-6 rounded-lg text-center hover:bg-opacity-20 transition">
+                    <i class="fas fa-file-invoice text-3xl text-gold mb-3"></i>
+                    <h3 class="font-semibold">Admissions</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-burgundy text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="text-xl font-serif font-bold mb-4 text-gold">Inkphase University</h3>
+                    <p class="text-sm text-gray-300 mb-4">
+                        A government-accredited institution committed to academic excellence and national development.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-gold"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-gold"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-gold"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-gold"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-gold">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-300 hover:text-gold">About Us</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-gold">Academics</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-gold">Admissions</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-gold">Research</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-gold">Library</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-gold">Administration</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-300 hover:text-gold">Leadership</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-gold">Governing Council</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-gold">Tenders</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-gold">Vacancies</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-gold">Official Gazette</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-gold">Contact Us</h4>
+                    <address class="not-italic text-sm text-gray-300 space-y-2">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i> Plot 123, University Avenue, Federal Capital Territory</p>
+                        <p><i class="fas fa-phone mr-2"></i> +234 800 UNIVERSITY</p>
+                        <p><i class="fas fa-envelope mr-2"></i> info@inkphase.edu.ng</p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-700 text-center text-sm text-gray-400">
+                <p>&copy; 2023 Inkphase University. All rights reserved. | 
+                   <a href="#" class="hover:text-gold">Privacy Policy</a> | 
+                   <a href="#" class="hover:text-gold">Cookies</a> | 
+                   <a href="#" class="hover:text-gold">Accessibility</a> | 
+                   <a href="#" class="hover:text-gold">Accreditation</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle department lists
+        document.querySelectorAll('.toggle-departments').forEach(button => {
+            button.addEventListener('click', function() {
+                const targetId = this.getAttribute('data-target');
+                const list = document.getElementById(targetId);
+                list.classList.toggle('open');
+                
+                // Rotate chevron icon
+                const icon = this.querySelector('i');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('open');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobileMenu');
+            const button = document.getElementById('mobileMenuButton');
+            
+            if (!menu.contains(event.target) && !button.contains(event.target)) {
+                menu.classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>
