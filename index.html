@@ -35,8 +35,13 @@
             --off-white: #f8f9fa;
         }
 
-        .hero-bg {
-            background: linear-gradient(rgba(10, 30, 63, 0.7), rgba(10, 30, 63, 0.7)), url('https://images.unsplash.com/photo-1562774053-701939b10b58?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+        .transition-banner {
+            background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--primary-navy) 100%);
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 10px rgba(212, 175, 55, 0.3); }
+            to { box-shadow: 0 0 20px rgba(212, 175, 55, 0.6); }
         }
 
         .faculty-card:hover,
@@ -339,14 +344,19 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-bg text-white py-32">
-        <div class="container mx-auto px-4 text-center">
+    <section class="relative bg-gradient-to-r from-navy to-burgundy text-white py-32">
+        <img src="https://images.unsplash.com/photo-1562774053-da3b142c6e3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" class="absolute inset-0 w-full h-full object-cover opacity-30">
+        <div class="hero-overlay absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
             <h1 class="text-4xl md:text-6xl font-serif font-bold mb-6">Inkphase University</h1>
             <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">A Government-Accredited Institution of Excellence</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#portal" class="btn btn-primary">Apply Now</a>
-                <a href="#faculties" class="btn btn-outline">Explore Programs</a>
+                <a href="#tour" class="btn btn-outline">Take a Tour</a>
             </div>
+        </div>
+        <div class="scroll-indicator absolute bottom-8 left-1/2 transform -translate-x-1/2">
+            <i class="fas fa-chevron-down text-2xl text-white animate-bounce"></i>
         </div>
     </section>
 
@@ -1040,7 +1050,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- OPAC -->
-                <div class="library-resource card p-6">
+                <div class="card p-6">
                     <div class="flex items-center mb-4">
                         <div class="bg-navy text-white rounded-lg w-12 h-12 flex items-center justify-center mr-4">
                             <i class="fas fa-search"></i>
@@ -1054,7 +1064,7 @@
                 </div>
                 
                 <!-- Institutional Repository -->
-                <div class="library-resource card p-6">
+                <div class="card p-6">
                     <div class="flex items-center mb-4">
                         <div class="bg-burgundy text-white rounded-lg w-12 h-12 flex items-center justify-center mr-4">
                             <i class="fas fa-database"></i>
@@ -1068,7 +1078,7 @@
                 </div>
                 
                 <!-- Journal Databases -->
-                <div class="library-resource card p-6">
+                <div class="card p-6">
                     <div class="flex items-center mb-4">
                         <div class="bg-gold text-navy rounded-lg w-12 h-12 flex items-center justify-center mr-4">
                             <i class="fas fa-book-open"></i>
@@ -1118,7 +1128,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
                 <!-- Hostels -->
-                <div class="facility-card card p-6 text-center">
+                <div class="card p-6 text-center">
                     <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-home text-2xl text-gold"></i>
                     </div>
@@ -1130,7 +1140,7 @@
                 </div>
                 
                 <!-- Clubs -->
-                <div class="facility-card card p-6 text-center">
+                <div class="card p-6 text-center">
                     <div class="w-16 h-16 bg-burgundy rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-users text-2xl text-gold"></i>
                     </div>
@@ -1142,7 +1152,7 @@
                 </div>
                 
                 <!-- Sports -->
-                <div class="facility-card card p-6 text-center">
+                <div class="card p-6 text-center">
                     <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-futbol text-2xl text-navy"></i>
                     </div>
@@ -1154,7 +1164,7 @@
                 </div>
                 
                 <!-- Counselling -->
-                <div class="facility-card card p-6 text-center">
+                <div class="card p-6 text-center">
                     <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-heartbeat text-2xl text-gold"></i>
                     </div>
@@ -1166,7 +1176,6 @@
                 </div>
             </div>
             
-            <!-- Detailed Sections -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Hostels -->
                 <div class="card p-6">
@@ -1239,7 +1248,7 @@
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Medical Center -->
                 <div class="card p-6">
                     <div class="flex items-center mb-4">
@@ -1529,7 +1538,7 @@
                 
                 <!-- Student Housing -->
                 <div class="gallery-item card overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1562774053-701939b10b58?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Student Housing" class="w-full h-48 object-cover">
+                    <img src="https://images.unsplash.com/photo-1562774053-b07e54358753?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Student Housing" class="w-full h-48 object-cover">
                     <div class="p-4">
                         <h3 class="font-bold text-navy">Student Housing</h3>
                         <p class="text-sm text-gray-600">Comfortable living spaces</p>
@@ -1565,7 +1574,7 @@
                 
                 <!-- Campus Chapel -->
                 <div class="gallery-item card overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Campus Chapel" class="w-full h-48 object-cover">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Campus Chapel" class="w-full h-48 object-cover">
                     <div class="p-4">
                         <h3 class="font-bold text-navy">Campus Chapel</h3>
                         <p class="text-sm text-gray-600">Multi-faith spiritual center</p>
@@ -1809,30 +1818,6 @@
                         top: target.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                }
-            });
-        });
-
-        // Add active class to current section in navigation
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('nav a');
-            
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (pageYOffset >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').substring(1) === current) {
-                    link.classList.add('active');
                 }
             });
         });
