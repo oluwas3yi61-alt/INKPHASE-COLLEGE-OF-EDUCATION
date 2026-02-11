@@ -35,13 +35,8 @@
             --off-white: #f8f9fa;
         }
 
-        .transition-banner {
-            background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--primary-navy) 100%);
-            animation: glow 2s infinite alternate;
-        }
-        @keyframes glow {
-            from { box-shadow: 0 0 10px rgba(212, 175, 55, 0.3); }
-            to { box-shadow: 0 0 20px rgba(212, 175, 55, 0.6); }
+        .hero-bg {
+            background: linear-gradient(rgba(10, 30, 63, 0.7), rgba(10, 30, 63, 0.7)), url('https://images.unsplash.com/photo-1562774053-701939b10b58?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
         }
 
         .faculty-card:hover,
@@ -172,6 +167,66 @@
             color: var(--primary-navy);
         }
 
+        .active-semester {
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .gallery-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .portal-column {
+            background: linear-gradient(135deg, rgba(10, 30, 63, 0.05) 0%, rgba(122, 31, 61, 0.05) 100%);
+        }
+
+        .faculty-hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-burgundy) 100%);
+            color: white;
+        }
+
+        .department-hero {
+            background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--primary-navy) 100%);
+            color: white;
+        }
+
+        .course-hero {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--primary-navy) 100%);
+            color: white;
+        }
+
+        .calendar-hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-gold) 100%);
+            color: white;
+        }
+
+        .admission-hero {
+            background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--primary-gold) 100%);
+            color: white;
+        }
+
+        .library-hero {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--primary-burgundy) 100%);
+            color: white;
+        }
+
+        .health-hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-gold) 100%);
+            color: white;
+        }
+
+        .contact-hero {
+            background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--primary-navy) 100%);
+            color: white;
+        }
+
         /* Accessibility */
         .sr-only {
             position: absolute;
@@ -202,7 +257,7 @@
     <!-- Header with Navigation -->
     <header class="bg-navy text-white sticky top-0 z-50 shadow-lg">
         <!-- Government Seal Banner -->
-        <div class="transition-banner py-2 px-4 text-center">
+        <div class="bg-gradient-to-r from-burgundy to-navy py-2 px-4 text-center">
             <div class="flex items-center justify-center space-x-2">
                 <i class="fas fa-award text-xl text-gold"></i>
                 <span class="font-semibold">Officially Adopted by Federal Government • University Status Achieved</span>
@@ -242,43 +297,10 @@
                                 <a href="#library" class="block px-4 py-2 hover:bg-lightGold">Library</a>
                             </div>
                         </li>
-                        <li class="relative group">
-                            <a href="#" class="nav-link hover:text-gold transition flex items-center">
-                                Administration <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a href="#leadership" class="block px-4 py-2 hover:bg-lightGold">Leadership</a>
-                                <a href="#council" class="block px-4 py-2 hover:bg-lightGold">Governing Council</a>
-                                <a href="#tenders" class="block px-4 py-2 hover:bg-lightGold">Tenders</a>
-                                <a href="#vacancies" class="block px-4 py-2 hover:bg-lightGold">Vacancies</a>
-                                <a href="#gazette" class="block px-4 py-2 hover:bg-lightGold">Official Gazette</a>
-                            </div>
-                        </li>
-                        <li class="relative group">
-                            <a href="#" class="nav-link hover:text-gold transition flex items-center">
-                                Student Life <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a href="#hostels" class="block px-4 py-2 hover:bg-lightGold">Hostels & Facilities</a>
-                                <a href="#clubs" class="block px-4 py-2 hover:bg-lightGold">Clubs & Societies</a>
-                                <a href="#sports" class="block px-4 py-2 hover:bg-lightGold">Sports Complex</a>
-                                <a href="#counselling" class="block px-4 py-2 hover:bg-lightGold">Counselling Services</a>
-                                <a href="#career" class="block px-4 py-2 hover:bg-lightGold">Career Services</a>
-                            </div>
-                        </li>
-                        <li class="relative group">
-                            <a href="#" class="nav-link hover:text-gold transition flex items-center">
-                                Research <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a href="#centers" class="block px-4 py-2 hover:bg-lightGold">Centers & Institutes</a>
-                                <a href="#publications" class="block px-4 py-2 hover:bg-lightGold">Publications</a>
-                                <a href="#grants" class="block px-4 py-2 hover:bg-lightGold">Research Grants</a>
-                                <a href="#conferences" class="block px-4 py-2 hover:bg-lightGold">Conferences</a>
-                                <a href="#partnerships" class="block px-4 py-2 hover:bg-lightGold">Partnerships</a>
-                            </div>
-                        </li>
+                        <li><a href="#student-life" class="nav-link hover:text-gold transition">Student Life</a></li>
                         <li><a href="#health" class="nav-link hover:text-gold transition">Health Services</a></li>
+                        <li><a href="#research" class="nav-link hover:text-gold transition">Research</a></li>
+                        <li><a href="#gallery" class="nav-link hover:text-gold transition">Gallery</a></li>
                         <li><a href="#contact" class="nav-link hover:text-gold transition">Contact</a></li>
                     </ul>
                 </nav>
@@ -306,63 +328,25 @@
                             <li><a href="#library" class="block py-1 text-sm hover:text-gold">Library</a></li>
                         </ul>
                     </li>
-                    <li class="border-t border-gray-700 pt-2">
-                        <a href="#" class="block py-2 hover:text-gold flex justify-between items-center">
-                            Administration <i class="fas fa-chevron-down"></i>
-                        </a>
-                        <ul class="ml-4 space-y-1 mt-1">
-                            <li><a href="#leadership" class="block py-1 text-sm hover:text-gold">Leadership</a></li>
-                            <li><a href="#council" class="block py-1 text-sm hover:text-gold">Governing Council</a></li>
-                            <li><a href="#tenders" class="block py-1 text-sm hover:text-gold">Tenders</a></li>
-                            <li><a href="#vacancies" class="block py-1 text-sm hover:text-gold">Vacancies</a></li>
-                            <li><a href="#gazette" class="block py-1 text-sm hover:text-gold">Official Gazette</a></li>
-                        </ul>
-                    </li>
-                    <li class="border-t border-gray-700 pt-2">
-                        <a href="#" class="block py-2 hover:text-gold flex justify-between items-center">
-                            Student Life <i class="fas fa-chevron-down"></i>
-                        </a>
-                        <ul class="ml-4 space-y-1 mt-1">
-                            <li><a href="#hostels" class="block py-1 text-sm hover:text-gold">Hostels & Facilities</a></li>
-                            <li><a href="#clubs" class="block py-1 text-sm hover:text-gold">Clubs & Societies</a></li>
-                            <li><a href="#sports" class="block py-1 text-sm hover:text-gold">Sports Complex</a></li>
-                            <li><a href="#counselling" class="block py-1 text-sm hover:text-gold">Counselling Services</a></li>
-                            <li><a href="#career" class="block py-1 text-sm hover:text-gold">Career Services</a></li>
-                        </ul>
-                    </li>
-                    <li class="border-t border-gray-700 pt-2">
-                        <a href="#" class="block py-2 hover:text-gold flex justify-between items-center">
-                            Research <i class="fas fa-chevron-down"></i>
-                        </a>
-                        <ul class="ml-4 space-y-1 mt-1">
-                            <li><a href="#centers" class="block py-1 text-sm hover:text-gold">Centers & Institutes</a></li>
-                            <li><a href="#publications" class="block py-1 text-sm hover:text-gold">Publications</a></li>
-                            <li><a href="#grants" class="block py-1 text-sm hover:text-gold">Research Grants</a></li>
-                            <li><a href="#conferences" class="block py-1 text-sm hover:text-gold">Conferences</a></li>
-                            <li><a href="#partnerships" class="block py-1 text-sm hover:text-gold">Partnerships</a></li>
-                        </ul>
-                    </li>
-                    <li class="border-t border-gray-700 pt-2"><a href="#health" class="block py-2 hover:text-gold">Health Services</a></li>
-                    <li class="border-t border-gray-700 pt-2"><a href="#contact" class="block py-2 hover:text-gold">Contact</a></li>
+                    <li><a href="#student-life" class="block py-2 hover:text-gold">Student Life</a></li>
+                    <li><a href="#health" class="block py-2 hover:text-gold">Health Services</a></li>
+                    <li><a href="#research" class="block py-2 hover:text-gold">Research</a></li>
+                    <li><a href="#gallery" class="block py-2 hover:text-gold">Gallery</a></li>
+                    <li><a href="#contact" class="block py-2 hover:text-gold">Contact</a></li>
                 </ul>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-r from-navy to-burgundy text-white py-32">
-        <img src="https://images.unsplash.com/photo-1562774053-701939b10b58?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" class="absolute inset-0 w-full h-full object-cover opacity-30">
-        <div class="hero-overlay absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
-        <div class="container mx-auto px-4 relative z-10 text-center">
+    <section class="hero-bg text-white py-32">
+        <div class="container mx-auto px-4 text-center">
             <h1 class="text-4xl md:text-6xl font-serif font-bold mb-6">Inkphase University</h1>
             <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">A Government-Accredited Institution of Excellence</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#admissions" class="btn btn-primary">Apply Now</a>
-                <a href="#tour" class="btn btn-outline">Virtual Campus Tour</a>
+                <a href="#portal" class="btn btn-primary">Apply Now</a>
+                <a href="#faculties" class="btn btn-outline">Explore Programs</a>
             </div>
-        </div>
-        <div class="scroll-indicator absolute bottom-8 left-1/2 transform -translate-x-1/2">
-            <i class="fas fa-chevron-down text-2xl text-white animate-bounce"></i>
         </div>
     </section>
 
@@ -821,7 +805,7 @@
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-serif font-bold text-navy section-title">Academic Calendar 2024/2025</h2>
                 <p class="text-lg text-gray-700 max-w-3xl mx-auto">
-                    Key dates for the academic year. All dates subject to official approval by the Senate.
+                    Key dates for the academic year. Currently Active: <span class="active-semester">First Semester (Harmattan)</span>
                 </p>
             </div>
             
@@ -832,7 +816,7 @@
                         <div class="w-10 h-10 bg-navy rounded-full flex items-center justify-center mr-3">
                             <i class="fas fa-calendar-alt text-white"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-navy">First Semester (2024/2025)</h3>
+                        <h3 class="text-xl font-bold text-navy">First Semester (Harmattan) - 2024/2025</h3>
                     </div>
                     
                     <div class="space-y-4">
@@ -884,7 +868,7 @@
                         <div class="w-10 h-10 bg-burgundy rounded-full flex items-center justify-center mr-3">
                             <i class="fas fa-calendar-week text-white"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-navy">Second Semester (2024/2025)</h3>
+                        <h3 class="text-xl font-bold text-navy">Second Semester (Rain) - 2024/2025</h3>
                     </div>
                     
                     <div class="space-y-4">
@@ -1037,7 +1021,7 @@
                         </div>
                     </div>
                     <div class="mt-6">
-                        <a href="#" class="btn btn-primary w-full">Apply Now</a>
+                        <a href="#portal" class="btn btn-primary w-full">Apply Now</a>
                     </div>
                 </div>
             </div>
@@ -1245,99 +1229,8 @@
         </div>
     </section>
 
-    <!-- Research Hub -->
-    <section id="research" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-serif font-bold text-navy section-title">Research Hub</h2>
-                <p class="text-lg text-gray-700 max-w-3xl mx-auto">
-                    Leading research initiatives in science, technology, humanities, and social sciences.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                <!-- Centers & Institutes -->
-                <div class="card p-6">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-navy text-white rounded-lg w-12 h-12 flex items-center justify-center mr-4">
-                            <i class="fas fa-flask"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-navy">Centers & Institutes</h3>
-                    </div>
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-gold mt-1 mr-3"></i>
-                            <span>Institute for Sustainable Development</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-gold mt-1 mr-3"></i>
-                            <span>Center for Health Sciences Research</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-gold mt-1 mr-3"></i>
-                            <span>Institute for Energy Solutions</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-gold mt-1 mr-3"></i>
-                            <span>Center for African Studies</span>
-                        </li>
-                    </ul>
-                    <a href="#centers" class="mt-4 block text-center btn btn-outline">View All Centers</a>
-                </div>
-                
-                <!-- Publications -->
-                <div class="card p-6">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-burgundy text-white rounded-lg w-12 h-12 flex items-center justify-center mr-4">
-                            <i class="fas fa-book"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-navy">Publications</h3>
-                    </div>
-                    <p class="text-gray-700 mb-4">
-                        Our research output includes 15 peer-reviewed journals, conference proceedings, and collaborative publications.
-                    </p>
-                    <div class="space-y-2">
-                        <div class="bg-lightGold p-3 rounded">
-                            <p class="font-bold text-navy">Annual Output</p>
-                            <p class="text-sm">500+ research papers</p>
-                        </div>
-                        <div class="bg-lightGold p-3 rounded">
-                            <p class="font-bold text-navy">Citations</p>
-                            <p class="text-sm">2,500+ citations annually</p>
-                        </div>
-                    </div>
-                    <a href="#publications" class="mt-4 block text-center btn btn-outline">Browse Publications</a>
-                </div>
-                
-                <!-- Grants -->
-                <div class="card p-6">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-gold text-navy rounded-lg w-12 h-12 flex items-center justify-center mr-4">
-                            <i class="fas fa-money-bill-wave"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-navy">Research Grants</h3>
-                    </div>
-                    <p class="text-gray-700 mb-4">
-                        Access funding opportunities from federal agencies, international foundations, and private sector partners.
-                    </p>
-                    <div class="space-y-2">
-                        <div class="bg-lightGold p-3 rounded">
-                            <p class="font-bold text-navy">Annual Budget</p>
-                            <p class="text-sm">₦500M+ allocated</p>
-                        </div>
-                        <div class="bg-lightGold p-3 rounded">
-                            <p class="font-bold text-navy">Success Rate</p>
-                            <p class="text-sm">75% funding success</p>
-                        </div>
-                    </div>
-                    <a href="#grants" class="mt-4 block text-center btn btn-outline">Apply for Grant</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Health Services -->
-    <section id="health" class="py-16 bg-offwhite">
+    <section id="health" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-serif font-bold text-navy section-title">Health Services</h2>
@@ -1409,33 +1302,33 @@
                     </ul>
                 </div>
                 
-                <!-- Sports & Fitness -->
+                <!-- Ambulance Service -->
                 <div class="card p-6">
                     <div class="flex items-center mb-4">
                         <div class="bg-gold text-navy rounded-lg w-12 h-12 flex items-center justify-center mr-4">
-                            <i class="fas fa-running"></i>
+                            <i class="fas fa-ambulance"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-navy">Sports & Fitness</h3>
+                        <h3 class="text-xl font-bold text-navy">Ambulance Service</h3>
                     </div>
                     <p class="text-gray-700 mb-4">
-                        Promoting physical wellness through our sports complex, fitness center, and recreational activities.
+                        24/7 emergency medical response with state-of-the-art equipment and trained paramedics.
                     </p>
                     <ul class="space-y-2">
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-gold mt-1 mr-3"></i>
-                            <span>Fitness Center (24/7 Access)</span>
+                            <span>On-campus Emergency Response</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-gold mt-1 mr-3"></i>
-                            <span>Swimming Pool</span>
+                            <span>Transport to Referral Hospitals</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-gold mt-1 mr-3"></i>
-                            <span>Team Sports Programs</span>
+                            <span>Trained Paramedic Staff</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-gold mt-1 mr-3"></i>
-                            <span>Yoga & Meditation Classes</span>
+                            <span>Advanced Medical Equipment</span>
                         </li>
                     </ul>
                 </div>
@@ -1443,143 +1336,256 @@
         </div>
     </section>
 
-    <!-- Administration -->
-    <section id="administration" class="py-16 bg-white">
+    <!-- Research Hub -->
+    <section id="research" class="py-16 bg-offwhite">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-serif font-bold text-navy section-title">Administration</h2>
+                <h2 class="text-3xl font-serif font-bold text-navy section-title">Research Hub</h2>
                 <p class="text-lg text-gray-700 max-w-3xl mx-auto">
-                    Learn about our leadership structure and governance framework.
+                    Leading research initiatives in science, technology, humanities, and social sciences.
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                <!-- Leadership -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Centers & Institutes -->
                 <div class="card p-6">
-                    <h3 class="text-xl font-bold text-navy mb-4">University Leadership</h3>
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="bg-lightGold rounded-lg p-4 mr-4">
-                                <i class="fas fa-user-tie text-3xl text-navy"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg">Prof. Sarah Okonkwo</h4>
-                                <p class="text-gray-600">Vice Chancellor</p>
-                                <p class="text-sm text-gray-700 mt-2">
-                                    Professor of Environmental Science with 25 years of experience in higher education administration.
-                                </p>
-                            </div>
+                    <div class="flex items-center mb-4">
+                        <div class="bg-navy text-white rounded-lg w-12 h-12 flex items-center justify-center mr-4">
+                            <i class="fas fa-flask"></i>
                         </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-lightGold rounded-lg p-4 mr-4">
-                                <i class="fas fa-user-shield text-3xl text-navy"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg">Dr. Emeka Adigwe</h4>
-                                <p class="text-gray-600">Pro-Chancellor</p>
-                                <p class="text-sm text-gray-700 mt-2">
-                                    Former Minister of Education and renowned educationist advocating for accessible quality education.
-                                </p>
-                            </div>
+                        <h3 class="text-xl font-bold text-navy">Centers & Institutes</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-gold mt-1 mr-3"></i>
+                            <span>Institute for Sustainable Development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-gold mt-1 mr-3"></i>
+                            <span>Center for Health Sciences Research</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-gold mt-1 mr-3"></i>
+                            <span>Institute for Energy Solutions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-gold mt-1 mr-3"></i>
+                            <span>Center for African Studies</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="mt-4 block text-center btn btn-outline">View All Centers</a>
+                </div>
+                
+                <!-- Publications -->
+                <div class="card p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-burgundy text-white rounded-lg w-12 h-12 flex items-center justify-center mr-4">
+                            <i class="fas fa-book"></i>
                         </div>
+                        <h3 class="text-xl font-bold text-navy">Publications</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        Our research output includes 15 peer-reviewed journals, conference proceedings, and collaborative publications.
+                    </p>
+                    <div class="space-y-2">
+                        <div class="bg-lightGold p-3 rounded">
+                            <p class="font-bold text-navy">Annual Output</p>
+                            <p class="text-sm">500+ research papers</p>
+                        </div>
+                        <div class="bg-lightGold p-3 rounded">
+                            <p class="font-bold text-navy">Citations</p>
+                            <p class="text-sm">2,500+ citations annually</p>
+                        </div>
+                    </div>
+                    <a href="#" class="mt-4 block text-center btn btn-outline">Browse Publications</a>
+                </div>
+                
+                <!-- Grants -->
+                <div class="card p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gold text-navy rounded-lg w-12 h-12 flex items-center justify-center mr-4">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy">Research Grants</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        Access funding opportunities from federal agencies, international foundations, and private sector partners.
+                    </p>
+                    <div class="space-y-2">
+                        <div class="bg-lightGold p-3 rounded">
+                            <p class="font-bold text-navy">Annual Budget</p>
+                            <p class="text-sm">₦500M+ allocated</p>
+                        </div>
+                        <div class="bg-lightGold p-3 rounded">
+                            <p class="font-bold text-navy">Success Rate</p>
+                            <p class="text-sm">75% funding success</p>
+                        </div>
+                    </div>
+                    <a href="#" class="mt-4 block text-center btn btn-outline">Apply for Grant</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portal Section -->
+    <section id="portal" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-serif font-bold text-navy section-title">University Portal</h2>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                    Access our student and staff portals for academic and administrative services.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Freshers Column -->
+                <div class="portal-column card p-8">
+                    <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-user-plus text-2xl text-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy mb-4 text-center">Freshers</h3>
+                    <p class="text-gray-700 mb-6 text-center">
+                        For new students applying for admission and orientation.
+                    </p>
+                    <a href="#" class="btn btn-primary w-full">Apply Now</a>
+                </div>
+                
+                <!-- Returning Students Column -->
+                <div class="portal-column card p-8">
+                    <div class="w-16 h-16 bg-burgundy rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-user-graduate text-2xl text-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy mb-4 text-center">Returning Students</h3>
+                    <p class="text-gray-700 mb-6 text-center">
+                        Login using Matric Number/JAMB Number and Last Name.
+                    </p>
+                    <div class="space-y-4">
+                        <input type="text" placeholder="Matric Number or JAMB Number" class="w-full px-4 py-3 border border-gray-300 rounded-lg">
+                        <input type="text" placeholder="Last Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg">
+                        <button class="btn btn-primary w-full">Login</button>
                     </div>
                 </div>
                 
-                <!-- Governing Council -->
-                <div class="card p-6">
-                    <h3 class="text-xl font-bold text-navy mb-4">Governing Council</h3>
-                    <p class="text-gray-700 mb-4">
-                        The Governing Council oversees the university's strategic direction and ensures compliance with federal regulations.
+                <!-- Part-Time Students Column -->
+                <div class="portal-column card p-8">
+                    <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-user-clock text-2xl text-navy"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy mb-4 text-center">Part-Time Students</h3>
+                    <p class="text-gray-700 mb-6 text-center">
+                        Special login for part-time students.
                     </p>
-                    <div class="space-y-3">
-                        <div class="bg-lightGold p-4 rounded">
-                            <h4 class="font-bold text-navy">Council Composition</h4>
-                            <ul class="text-sm space-y-1 mt-2">
-                                <li>• Chairman (Appointed by Federal Government)</li>
-                                <li>• 12 Members (Experts in various fields)</li>
-                                <li>• 3 Representatives from State Government</li>
-                                <li>• 2 Student Representatives</li>
-                            </ul>
-                        </div>
-                        <div class="bg-lightGold p-4 rounded">
-                            <h4 class="font-bold text-navy">Meeting Schedule</h4>
-                            <p class="text-sm mt-2">Quarterly meetings with annual strategic planning session</p>
-                        </div>
+                    <div class="space-y-4">
+                        <input type="text" placeholder="Part-Time ID" class="w-full px-4 py-3 border border-gray-300 rounded-lg">
+                        <input type="text" placeholder="Last Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg">
+                        <button class="btn btn-primary w-full">Login</button>
                     </div>
                 </div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Tenders -->
-                <div class="card p-6">
-                    <h3 class="text-xl font-bold text-navy mb-4">Tenders</h3>
-                    <p class="text-gray-700 mb-4">
-                        View current procurement opportunities and tender documents.
-                    </p>
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <i class="fas fa-file-contract text-gold mt-1 mr-3"></i>
-                            <div>
-                                <p class="font-bold">Construction of New Engineering Block</p>
-                                <p class="text-sm text-gray-600">Deadline: March 15, 2024</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-file-contract text-gold mt-1 mr-3"></i>
-                            <div>
-                                <p class="font-bold">ICT Infrastructure Upgrade</p>
-                                <p class="text-sm text-gray-600">Deadline: April 20, 2024</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-file-contract text-gold mt-1 mr-3"></i>
-                            <div>
-                                <p class="font-bold">Catering Services Contract</p>
-                                <p class="text-sm text-gray-600">Deadline: May 5, 2024</p>
-                            </div>
-                        </li>
-                    </ul>
-                    <a href="#tenders" class="mt-4 block text-center btn btn-outline">View All Tenders</a>
+            <!-- Staff Portal -->
+            <div class="mt-12 text-center">
+                <div class="inline-block bg-lightGold p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold text-navy mb-4">Staff Portal</h3>
+                    <p class="text-gray-700 mb-6">Secure login for university employees</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <input type="text" placeholder="Staff ID" class="px-4 py-3 border border-gray-300 rounded-lg">
+                        <input type="password" placeholder="Password" class="px-4 py-3 border border-gray-300 rounded-lg">
+                        <button class="btn btn-secondary">Staff Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campus Gallery -->
+    <section id="gallery" class="py-16 bg-offwhite">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-serif font-bold text-navy section-title">Campus Gallery</h2>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                    Explore our beautiful campus facilities and vibrant student life through our gallery.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Library -->
+                <div class="gallery-item card overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1495640388908-05fa85288e61?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Main Library" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-navy">Main Library</h3>
+                        <p class="text-sm text-gray-600">State-of-the-art learning resources</p>
+                    </div>
                 </div>
                 
-                <!-- Vacancies -->
-                <div class="card p-6">
-                    <h3 class="text-xl font-bold text-navy mb-4">Vacancies</h3>
-                    <p class="text-gray-700 mb-4">
-                        Current openings for academic, administrative, and technical positions.
-                    </p>
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <i class="fas fa-user-graduate text-gold mt-1 mr-3"></i>
-                            <div>
-                                <p class="font-bold">Professor of Computer Science</p>
-                                <p class="text-sm text-gray-600">Faculty of Science</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-user-graduate text-gold mt-1 mr-3"></i>
-                            <div>
-                                <p class="font-bold">Head of Human Resources</p>
-                                <p class="text-sm text-gray-600">Administrative Division</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-user-graduate text-gold mt-1 mr-3"></i>
-                            <div>
-                                <p class="font-bold">Research Fellow - Sustainability</p>
-                                <p class="text-sm text-gray-600">Institute for Sustainable Development</p>
-                            </div>
-                        </li>
-                    </ul>
-                    <a href="#vacancies" class="mt-4 block text-center btn btn-outline">View All Vacancies</a>
+                <!-- Lecture Halls -->
+                <div class="gallery-item card overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Lecture Halls" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-navy">Lecture Halls</h3>
+                        <p class="text-sm text-gray-600">Modern classrooms with technology</p>
+                    </div>
+                </div>
+                
+                <!-- Student Housing -->
+                <div class="gallery-item card overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939b10b58?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Student Housing" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-navy">Student Housing</h3>
+                        <p class="text-sm text-gray-600">Comfortable living spaces</p>
+                    </div>
+                </div>
+                
+                <!-- Sports Complex -->
+                <div class="gallery-item card overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1581578021424-ebdc0b6bc2d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sports Complex" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-navy">Sports Complex</h3>
+                        <p class="text-sm text-gray-600">Recreation and fitness facilities</p>
+                    </div>
+                </div>
+                
+                <!-- Laboratories -->
+                <div class="gallery-item card overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Laboratories" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-navy">Laboratories</h3>
+                        <p class="text-sm text-gray-600">Cutting-edge research equipment</p>
+                    </div>
+                </div>
+                
+                <!-- Campus Cafeteria -->
+                <div class="gallery-item card overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Campus Cafeteria" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-navy">Campus Cafeteria</h3>
+                        <p class="text-sm text-gray-600">Healthy meals for students</p>
+                    </div>
+                </div>
+                
+                <!-- Campus Chapel -->
+                <div class="gallery-item card overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Campus Chapel" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-navy">Campus Chapel</h3>
+                        <p class="text-sm text-gray-600">Multi-faith spiritual center</p>
+                    </div>
+                </div>
+                
+                <!-- Administration Building -->
+                <div class="gallery-item card overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1581578021424-ebdc0b6bc2d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Administration Building" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-navy">Admin Building</h3>
+                        <p class="text-sm text-gray-600">Central administration hub</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-offwhite">
+    <section id="contact" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-serif font-bold text-navy section-title">Contact Us</h2>
@@ -1705,14 +1711,14 @@
                 </div>
                 
                 <div>
-                    <h4 class="text-lg font-semibold mb-4 text-gold">Administration</h4>
+                    <h4 class="text-lg font-semibold mb-4 text-gold">Student Life</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#leadership" class="text-gray-300 hover:text-gold">Leadership</a></li>
-                        <li><a href="#council" class="text-gray-300 hover:text-gold">Governing Council</a></li>
-                        <li><a href="#tenders" class="text-gray-300 hover:text-gold">Tenders</a></li>
-                        <li><a href="#vacancies" class="text-gray-300 hover:text-gold">Vacancies</a></li>
-                        <li><a href="#gazette" class="text-gray-300 hover:text-gold">Official Gazette</a></li>
-                        <li><a href="#policies" class="text-gray-300 hover:text-gold">Policies</a></li>
+                        <li><a href="#hostels" class="text-gray-300 hover:text-gold">Hostels & Facilities</a></li>
+                        <li><a href="#clubs" class="text-gray-300 hover:text-gold">Clubs & Societies</a></li>
+                        <li><a href="#sports" class="text-gray-300 hover:text-gold">Sports Complex</a></li>
+                        <li><a href="#counselling" class="text-gray-300 hover:text-gold">Counselling Services</a></li>
+                        <li><a href="#career" class="text-gray-300 hover:text-gold">Career Services</a></li>
+                        <li><a href="#health" class="text-gray-300 hover:text-gold">Health Services</a></li>
                     </ul>
                 </div>
                 
