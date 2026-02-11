@@ -27,8 +27,16 @@
         }
     </script>
     <style>
+        :root {
+            --primary-navy: #0a1e3f;
+            --primary-burgundy: #7a1f3d;
+            --primary-gold: #d4af37;
+            --light-gold: #f5e9c9;
+            --off-white: #f8f9fa;
+        }
+        
         .transition-banner {
-            background: linear-gradient(135deg, #7a1f3d 0%, #0a1e3f 100%);
+            background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--primary-navy) 100%);
             animation: glow 2s infinite alternate;
         }
         @keyframes glow {
@@ -40,7 +48,7 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
         .news-card:hover {
-            border-left: 4px solid #d4af37;
+            border-left: 4px solid var(--primary-gold);
         }
         .department-list {
             max-height: 0;
@@ -56,9 +64,439 @@
         .mobile-menu.open {
             display: block;
         }
+        .research-highlight {
+            background: linear-gradient(135deg, rgba(122, 31, 61, 0.1) 0%, rgba(10, 30, 63, 0.1) 100%);
+        }
+        .campus-tour {
+            background: linear-gradient(135deg, rgba(10, 30, 63, 0.9) 0%, rgba(122, 31, 61, 0.9) 100%);
+        }
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(245, 233, 201, 0.9) 100%);
+            border-left: 4px solid var(--primary-gold);
+        }
+        .stats-card {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-burgundy) 100%);
+        }
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+        }
+        .alumni-highlight {
+            background: linear-gradient(135deg, rgba(122, 31, 61, 0.05) 0%, rgba(10, 30, 63, 0.05) 100%);
+        }
+        .partnership-logos {
+            background: linear-gradient(90deg, var(--primary-navy) 0%, var(--primary-burgundy) 100%);
+        }
+        .partner-logo {
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        .partner-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        .newsletter-input {
+            border: 2px solid var(--primary-gold);
+        }
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--primary-navy);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.3);
+        }
+        .page-section {
+            padding: 4rem 0;
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1rem;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-gold);
+            border-radius: 2px;
+        }
+        .section-subtitle {
+            color: var(--primary-navy);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .btn-primary {
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+        }
+        .btn-primary:hover {
+            background: #c9a12d;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: var(--primary-navy);
+            color: white;
+        }
+        .btn-secondary:hover {
+            background: var(--primary-burgundy);
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+        }
+        .btn-outline:hover {
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+        }
+        .nav-link {
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 200px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            padding: 0.5rem 0;
+        }
+        .dropdown-menu.show {
+            display: block;
+        }
+        .dropdown-item {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--primary-navy);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .dropdown-item:hover {
+            background: var(--light-gold);
+            color: var(--primary-burgundy);
+        }
+        .mobile-dropdown {
+            display: none;
+            padding: 0.5rem 0;
+        }
+        .mobile-dropdown.show {
+            display: block;
+        }
+        .mobile-dropdown .dropdown-item {
+            padding-left: 2rem;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(10, 30, 63, 0.7) 0%, rgba(122, 31, 61, 0.7) 100%);
+            z-index: 1;
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+            40% {transform: translateY(-20px) translateX(-50%);}
+            60% {transform: translateY(-10px) translateX(-50%);}
+        }
+        .faculty-hero {
+            background: linear-gradient(135deg, rgba(10, 30, 63, 0.9) 0%, rgba(122, 31, 61, 0.9) 100%);
+            color: white;
+        }
+        .department-hero {
+            background: linear-gradient(135deg, rgba(122, 31, 61, 0.9) 0%, rgba(10, 30, 63, 0.9) 100%);
+            color: white;
+        }
+        .course-card {
+            border-left: 4px solid var(--primary-gold);
+        }
+        .calendar-event {
+            border-left: 4px solid var(--primary-burgundy);
+        }
+        .admission-step {
+            counter-increment: step-counter;
+        }
+        .admission-step:before {
+            content: counter(step-counter);
+            position: absolute;
+            top: -1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2.5rem;
+            height: 2.5rem;
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+        .staff-profile {
+            transition: all 0.3s ease;
+        }
+        .staff-profile:hover {
+            transform: translateY(-5px);
+        }
+        .library-resource {
+            border-left: 4px solid var(--primary-navy);
+        }
+        .student-life {
+            background: linear-gradient(135deg, rgba(10, 30, 63, 0.05) 0%, rgba(122, 31, 61, 0.05) 100%);
+        }
+        .campus-facility {
+            transition: all 0.3s ease;
+        }
+        .campus-facility:hover {
+            transform: scale(1.03);
+        }
+        .alumni-profile {
+            transition: all 0.3s ease;
+        }
+        .alumni-profile:hover {
+            transform: translateY(-5px);
+        }
+        .news-article {
+            transition: all 0.3s ease;
+        }
+        .news-article:hover {
+            transform: translateY(-5px);
+        }
+        .event-card {
+            transition: all 0.3s ease;
+        }
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        .footer-section {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: translateY(-5px);
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+        }
+        .quick-action {
+            transition: all 0.3s ease;
+        }
+        .quick-action:hover {
+            transform: translateY(-5px);
+        }
+        .search-bar {
+            border: 2px solid var(--primary-gold);
+        }
+        .search-bar:focus {
+            outline: none;
+            border-color: var(--primary-navy);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.3);
+        }
+        .breadcrumb {
+            background: linear-gradient(135deg, rgba(10, 30, 63, 0.05) 0%, rgba(122, 31, 61, 0.05) 100%);
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .page-item {
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .page-item.active {
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+        }
+        .page-item:hover:not(.active) {
+            background: var(--light-gold);
+        }
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary-gold);
+            animation: spin 1s ease-in-out infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .back-to-top:hover {
+            background: var(--primary-burgundy);
+            color: white;
+            transform: translateY(-5px);
+        }
+        .cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--primary-navy);
+            color: white;
+            padding: 1rem;
+            z-index: 1001;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cookie-consent button {
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .accessibility-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            background: var(--primary-navy);
+            color: white;
+            padding: 0.5rem;
+            z-index: 1001;
+            display: flex;
+            gap: 0.5rem;
+        }
+        .accessibility-btn {
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+            border: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .accessibility-btn:hover {
+            background: var(--primary-burgundy);
+            color: white;
+        }
     </style>
 </head>
 <body class="bg-offwhite font-sans text-gray-800">
+    <!-- Accessibility Panel -->
+    <div class="accessibility-panel">
+        <button class="accessibility-btn" onclick="increaseTextSize()">A+</button>
+        <button class="accessibility-btn" onclick="decreaseTextSize()">A-</button>
+        <button class="accessibility-btn" onclick="toggleHighContrast()">HC</button>
+    </div>
+
+    <!-- Cookie Consent -->
+    <div id="cookieConsent" class="cookie-consent">
+        <p>This website uses cookies to improve your experience. By continuing to browse, you agree to our cookie policy.</p>
+        <button onclick="acceptCookies()">Accept</button>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
     <!-- Header with Navigation -->
     <header class="bg-navy text-white sticky top-0 z-50 shadow-lg">
         <!-- Government Seal Banner -->
@@ -88,32 +526,58 @@
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:block">
                     <ul class="flex space-x-8">
-                        <li><a href="#" class="hover:text-gold transition">Home</a></li>
+                        <li><a href="#" class="nav-link hover:text-gold transition">Home</a></li>
                         <li class="relative group">
-                            <a href="#" class="hover:text-gold transition flex items-center">
+                            <a href="#" class="nav-link hover:text-gold transition flex items-center">
                                 Academics <i class="fas fa-chevron-down ml-1 text-xs"></i>
                             </a>
-                            <div class="absolute hidden group-hover:block bg-white text-navy rounded-lg shadow-lg w-64 mt-2 py-2">
-                                <a href="#" class="block px-4 py-2 hover:bg-lightGold">Faculties</a>
-                                <a href="#" class="block px-4 py-2 hover:bg-lightGold">Departments</a>
-                                <a href="#" class="block px-4 py-2 hover:bg-lightGold">Course Catalog</a>
-                                <a href="#" class="block px-4 py-2 hover:bg-lightGold">Academic Calendar</a>
+                            <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item">Faculties</a>
+                                <a href="#" class="dropdown-item">Departments</a>
+                                <a href="#" class="dropdown-item">Course Catalog</a>
+                                <a href="#" class="dropdown-item">Academic Calendar</a>
+                                <a href="#" class="dropdown-item">Admissions</a>
+                                <a href="#" class="dropdown-item">Library</a>
                             </div>
                         </li>
                         <li class="relative group">
-                            <a href="#" class="hover:text-gold transition flex items-center">
+                            <a href="#" class="nav-link hover:text-gold transition flex items-center">
                                 Administration <i class="fas fa-chevron-down ml-1 text-xs"></i>
                             </a>
-                            <div class="absolute hidden group-hover:block bg-white text-navy rounded-lg shadow-lg w-64 mt-2 py-2">
-                                <a href="#" class="block px-4 py-2 hover:bg-lightGold">Leadership</a>
-                                <a href="#" class="block px-4 py-2 hover:bg-lightGold">Governing Council</a>
-                                <a href="#" class="block px-4 py-2 hover:bg-lightGold">Tenders</a>
-                                <a href="#" class="block px-4 py-2 hover:bg-lightGold">Vacancies</a>
+                            <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item">Leadership</a>
+                                <a href="#" class="dropdown-item">Governing Council</a>
+                                <a href="#" class="dropdown-item">Tenders</a>
+                                <a href="#" class="dropdown-item">Vacancies</a>
+                                <a href="#" class="dropdown-item">Official Gazette</a>
                             </div>
                         </li>
-                        <li><a href="#" class="hover:text-gold transition">Admissions</a></li>
-                        <li><a href="#" class="hover:text-gold transition">Library</a></li>
-                        <li><a href="#" class="hover:text-gold transition">Student Portal</a></li>
+                        <li class="relative group">
+                            <a href="#" class="nav-link hover:text-gold transition flex items-center">
+                                Student Life <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item">Housing</a>
+                                <a href="#" class="dropdown-item">Clubs & Societies</a>
+                                <a href="#" class="dropdown-item">Sports</a>
+                                <a href="#" class="dropdown-item">Counseling Services</a>
+                                <a href="#" class="dropdown-item">Career Services</a>
+                            </div>
+                        </li>
+                        <li class="relative group">
+                            <a href="#" class="nav-link hover:text-gold transition flex items-center">
+                                Research <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item">Centers & Institutes</a>
+                                <a href="#" class="dropdown-item">Publications</a>
+                                <a href="#" class="dropdown-item">Grants</a>
+                                <a href="#" class="dropdown-item">Conferences</a>
+                                <a href="#" class="dropdown-item">Partnerships</a>
+                            </div>
+                        </li>
+                        <li><a href="#" class="nav-link hover:text-gold transition">About</a></li>
+                        <li><a href="#" class="nav-link hover:text-gold transition">Contact</a></li>
                     </ul>
                 </nav>
                 
@@ -131,68 +595,141 @@
                         <a href="#" class="block py-2 hover:text-gold flex justify-between items-center">
                             Academics <i class="fas fa-chevron-down"></i>
                         </a>
-                        <ul class="ml-4 space-y-1 mt-1">
-                            <li><a href="#" class="block py-1 text-sm hover:text-gold">Faculties</a></li>
-                            <li><a href="#" class="block py-1 text-sm hover:text-gold">Departments</a></li>
-                            <li><a href="#" class="block py-1 text-sm hover:text-gold">Course Catalog</a></li>
-                            <li><a href="#" class="block py-1 text-sm hover:text-gold">Academic Calendar</a></li>
+                        <ul class="mobile-dropdown">
+                            <li><a href="#" class="dropdown-item">Faculties</a></li>
+                            <li><a href="#" class="dropdown-item">Departments</a></li>
+                            <li><a href="#" class="dropdown-item">Course Catalog</a></li>
+                            <li><a href="#" class="dropdown-item">Academic Calendar</a></li>
+                            <li><a href="#" class="dropdown-item">Admissions</a></li>
+                            <li><a href="#" class="dropdown-item">Library</a></li>
                         </ul>
                     </li>
                     <li class="border-t border-gray-700 pt-2">
                         <a href="#" class="block py-2 hover:text-gold flex justify-between items-center">
                             Administration <i class="fas fa-chevron-down"></i>
                         </a>
-                        <ul class="ml-4 space-y-1 mt-1">
-                            <li><a href="#" class="block py-1 text-sm hover:text-gold">Leadership</a></li>
-                            <li><a href="#" class="block py-1 text-sm hover:text-gold">Governing Council</a></li>
-                            <li><a href="#" class="block py-1 text-sm hover:text-gold">Tenders</a></li>
-                            <li><a href="#" class="block py-1 text-sm hover:text-gold">Vacancies</a></li>
+                        <ul class="mobile-dropdown">
+                            <li><a href="#" class="dropdown-item">Leadership</a></li>
+                            <li><a href="#" class="dropdown-item">Governing Council</a></li>
+                            <li><a href="#" class="dropdown-item">Tenders</a></li>
+                            <li><a href="#" class="dropdown-item">Vacancies</a></li>
+                            <li><a href="#" class="dropdown-item">Official Gazette</a></li>
                         </ul>
                     </li>
-                    <li><a href="#" class="block py-2 hover:text-gold">Admissions</a></li>
-                    <li><a href="#" class="block py-2 hover:text-gold">Library</a></li>
-                    <li><a href="#" class="block py-2 hover:text-gold">Student Portal</a></li>
+                    <li class="border-t border-gray-700 pt-2">
+                        <a href="#" class="block py-2 hover:text-gold flex justify-between items-center">
+                            Student Life <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="mobile-dropdown">
+                            <li><a href="#" class="dropdown-item">Housing</a></li>
+                            <li><a href="#" class="dropdown-item">Clubs & Societies</a></li>
+                            <li><a href="#" class="dropdown-item">Sports</a></li>
+                            <li><a href="#" class="dropdown-item">Counseling Services</a></li>
+                            <li><a href="#" class="dropdown-item">Career Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="border-t border-gray-700 pt-2">
+                        <a href="#" class="block py-2 hover:text-gold flex justify-between items-center">
+                            Research <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="mobile-dropdown">
+                            <li><a href="#" class="dropdown-item">Centers & Institutes</a></li>
+                            <li><a href="#" class="dropdown-item">Publications</a></li>
+                            <li><a href="#" class="dropdown-item">Grants</a></li>
+                            <li><a href="#" class="dropdown-item">Conferences</a></li>
+                            <li><a href="#" class="dropdown-item">Partnerships</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="block py-2 hover:text-gold">About</a></li>
+                    <li><a href="#" class="block py-2 hover:text-gold">Contact</a></li>
                 </ul>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-navy to-burgundy text-white py-20">
-        <div class="container mx-auto px-4 text-center">
+    <section class="relative bg-gradient-to-r from-navy to-burgundy text-white py-32">
+        <img src="https://images.unsplash.com/photo-1562774053-701939b10b58?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
             <h1 class="text-4xl md:text-6xl font-serif font-bold mb-6">Inkphase University</h1>
             <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">A Government-Accredited Institution of Excellence</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#" class="bg-gold text-navy px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition">Apply Now</a>
-                <a href="#" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-navy transition">Take a Tour</a>
+                <a href="#" class="btn btn-primary">Apply Now</a>
+                <a href="#" class="btn btn-outline">Take a Tour</a>
             </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down text-2xl"></i>
         </div>
     </section>
 
-    <!-- Government Adoption Story -->
-    <section class="py-16 bg-white">
+    <!-- University Overview -->
+    <section class="page-section bg-white">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-3xl font-serif font-bold text-navy mb-6">Our Government Partnership Journey</h2>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    Inkphase College of Education began its journey as a pioneering institution in teacher education and development. 
-                    Since its founding, the college has maintained a commitment to academic excellence and community service. 
-                    In recognition of our outstanding contributions to education and our robust infrastructure, the state government 
-                    has officially adopted us as a university. This transition represents a significant milestone that enhances our 
-                    capacity to offer advanced degrees, conduct cutting-edge research, and expand our impact on national development. 
-                    As Inkphase University, we continue our mission with renewed vigor, backed by government support and accountability.
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-serif font-bold text-navy section-title">Our Excellence</h2>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                    As a government-adopted university, we maintain the highest academic standards while fostering innovation and research.
                 </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="card p-6 text-center">
+                    <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-graduation-cap text-2xl text-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy mb-3">Academic Excellence</h3>
+                    <p class="text-gray-700">
+                        Our rigorous academic programs are designed to meet global standards and prepare students for leadership roles.
+                    </p>
+                </div>
+                
+                <div class="card p-6 text-center">
+                    <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-lightbulb text-2xl text-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy mb-3">Research Innovation</h3>
+                    <p class="text-gray-700">
+                        Cutting-edge research facilities and partnerships with industry leaders drive innovation across disciplines.
+                    </p>
+                </div>
+                
+                <div class="card p-6 text-center">
+                    <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-2xl text-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy mb-3">Community Impact</h3>
+                    <p class="text-gray-700">
+                        Our commitment extends beyond campus through community engagement and national development initiatives.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="research-highlight py-16 px-8 rounded-xl">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h3 class="text-2xl font-serif font-bold text-navy mb-4">Our Research Excellence</h3>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Inkphase University is recognized for groundbreaking research in sustainable development, health sciences, and technology innovation. Our faculty and students contribute to solving critical challenges facing Nigeria and the world.
+                    </p>
+                    <a href="#" class="btn btn-secondary">Explore Research</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Faculties Section -->
-    <section class="py-16 bg-offwhite">
+    <section class="page-section bg-offwhite">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-serif font-bold text-center text-navy mb-12">Our Faculties</h2>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-serif font-bold text-navy section-title">Our Faculties</h2>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                    We offer diverse academic programs across multiple faculties, each dedicated to excellence in their respective fields.
+                </p>
+            </div>
+            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Faculty Cards -->
-                <div class="faculty-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+                <div class="faculty-card card overflow-hidden">
                     <div class="bg-navy p-6 text-center">
                         <i class="fas fa-flask text-4xl text-gold mb-4"></i>
                         <h3 class="text-xl font-bold text-white">Faculty of Science</h3>
@@ -210,12 +747,13 @@
                             <li>Chemistry</li>
                             <li>Biology</li>
                             <li>Computer Science</li>
+                            <li>Geology</li>
                         </ul>
-                        <a href="#" class="mt-4 block text-center bg-navy text-white py-2 rounded-lg hover:bg-burgundy transition">Learn More</a>
+                        <a href="#" class="mt-4 block text-center btn btn-primary">Learn More</a>
                     </div>
                 </div>
 
-                <div class="faculty-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+                <div class="faculty-card card overflow-hidden">
                     <div class="bg-burgundy p-6 text-center">
                         <i class="fas fa-book-open text-4xl text-gold mb-4"></i>
                         <h3 class="text-xl font-bold text-white">Faculty of Arts</h3>
@@ -233,12 +771,13 @@
                             <li>Philosophy</li>
                             <li>Religious Studies</li>
                             <li>French</li>
+                            <li>Music</li>
                         </ul>
-                        <a href="#" class="mt-4 block text-center bg-burgundy text-white py-2 rounded-lg hover:bg-navy transition">Learn More</a>
+                        <a href="#" class="mt-4 block text-center btn btn-primary">Learn More</a>
                     </div>
                 </div>
 
-                <div class="faculty-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+                <div class="faculty-card card overflow-hidden">
                     <div class="bg-gold p-6 text-center">
                         <i class="fas fa-graduation-cap text-4xl text-navy mb-4"></i>
                         <h3 class="text-xl font-bold text-navy">Faculty of Education</h3>
@@ -256,18 +795,273 @@
                             <li>Guidance & Counseling</li>
                             <li>Science Education</li>
                             <li>Early Childhood Education</li>
+                            <li>Adult Education</li>
                         </ul>
-                        <a href="#" class="mt-4 block text-center bg-gold text-navy py-2 rounded-lg hover:bg-opacity-90 transition">Learn More</a>
+                        <a href="#" class="mt-4 block text-center btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="faculty-card card overflow-hidden">
+                    <div class="bg-navy p-6 text-center">
+                        <i class="fas fa-balance-scale text-4xl text-gold mb-4"></i>
+                        <h3 class="text-xl font-bold text-white">Faculty of Law</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm text-gray-600">Departments</span>
+                            <button class="toggle-departments text-gold hover:text-burgundy" data-target="law-depts">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <ul class="department-list text-sm text-gray-700 space-y-2" id="law-depts">
+                            <li>Private Law</li>
+                            <li>Public Law</li>
+                            <li>Criminology</li>
+                            <li>International Law</li>
+                            <li>Islamic Law</li>
+                        </ul>
+                        <a href="#" class="mt-4 block text-center btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="faculty-card card overflow-hidden">
+                    <div class="bg-burgundy p-6 text-center">
+                        <i class="fas fa-stethoscope text-4xl text-gold mb-4"></i>
+                        <h3 class="text-xl font-bold text-white">Faculty of Medicine</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm text-gray-600">Departments</span>
+                            <button class="toggle-departments text-gold hover:text-navy" data-target="med-depts">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <ul class="department-list text-sm text-gray-700 space-y-2" id="med-depts">
+                            <li>Anatomy</li>
+                            <li>Physiology</li>
+                            <li>Biochemistry</li>
+                            <li>Pharmacology</li>
+                            <li>Pathology</li>
+                            <li>Internal Medicine</li>
+                        </ul>
+                        <a href="#" class="mt-4 block text-center btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="faculty-card card overflow-hidden">
+                    <div class="bg-gold p-6 text-center">
+                        <i class="fas fa-industry text-4xl text-navy mb-4"></i>
+                        <h3 class="text-xl font-bold text-navy">Faculty of Engineering</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm text-gray-600">Departments</span>
+                            <button class="toggle-departments text-navy hover:text-burgundy" data-target="eng-depts">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <ul class="department-list text-sm text-gray-700 space-y-2" id="eng-depts">
+                            <li>Civil Engineering</li>
+                            <li>Mechanical Engineering</li>
+                            <li>Electrical Engineering</li>
+                            <li>Chemical Engineering</li>
+                            <li>Computer Engineering</li>
+                            <li>Materials Engineering</li>
+                        </ul>
+                        <a href="#" class="mt-4 block text-center btn btn-primary">Learn More</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Campus Pulse (News & Events) -->
-    <section class="py-16 bg-white">
+    <!-- Campus Life -->
+    <section class="page-section student-life">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-serif font-bold text-center text-navy mb-12">Campus Pulse</h2>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-serif font-bold text-navy section-title">Student Life</h2>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                    Experience a vibrant campus life with diverse opportunities for personal growth and development.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="card p-6">
+                    <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-home text-2xl text-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy mb-3">Housing</h3>
+                    <p class="text-gray-700 mb-4">
+                        Comfortable and secure dormitories with modern amenities and 24/7 security.
+                    </p>
+                    <a href="#" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <div class="card p-6">
+                    <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-heartbeat text-2xl text-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy mb-3">Health Services</h3>
+                    <p class="text-gray-700 mb-4">
+                        On-campus medical center providing comprehensive healthcare to students and staff.
+                    </p>
+                    <a href="#" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <div class="card p-6">
+                    <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-futbol text-2xl text-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy mb-3">Sports & Recreation</h3>
+                    <p class="text-gray-700 mb-4">
+                        State-of-the-art sports facilities and recreational activities for holistic development.
+                    </p>
+                    <a href="#" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold text-navy mb-4">Clubs & Societies</h3>
+                    <p class="text-gray-700 mb-4">
+                        Join over 50 active clubs and societies covering academic, cultural, religious, and recreational interests.
+                    </p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-gold mr-2"></i>
+                            <span>Debate Club</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-gold mr-2"></i>
+                            <span>Rotaract Club</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-gold mr-2"></i>
+                            <span>Music Society</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-gold mr-2"></i>
+                            <span>Science Association</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold text-navy mb-4">Career Services</h3>
+                    <p class="text-gray-700 mb-4">
+                        Comprehensive career guidance, job placement assistance, and industry connections to launch your career.
+                    </p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-gold mr-2"></i>
+                            <span>Career Counseling</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-gold mr-2"></i>
+                            <span>Job Placement</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-gold mr-2"></i>
+                            <span>Internship Programs</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-gold mr-2"></i>
+                            <span>Industry Partnerships</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campus Gallery -->
+    <section class="page-section bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-serif font-bold text-navy section-title">Campus Gallery</h2>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                    Explore our beautiful campus facilities and vibrant student life through our gallery.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="gallery-item card overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939b10b58?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Main Library" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-navy">Main Library</h3>
+                        <p class="text-sm text-gray-600">State-of-the-art learning resources</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item card overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Lecture Hall" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-navy">Lecture Halls</h3>
+                        <p class="text-sm text-gray-600">Modern classrooms with technology</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item card overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Student Housing" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-navy">Student Housing</h3>
+                        <p class="text-sm text-gray-600">Comfortable living spaces</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item card overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1581578021424-ebdc0b6bc2d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sports Complex" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-navy">Sports Complex</h3>
+                        <p class="text-sm text-gray-600">Recreation and fitness facilities</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item card overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1581578021424-ebdc0b6bc2d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Laboratory" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-navy">Research Labs</h3>
+                        <p class="text-sm text-gray-600">Cutting-edge research equipment</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item card overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Cafeteria" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-navy">Campus Cafeteria</h3>
+                        <p class="text-sm text-gray-600">Healthy meals for students</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item card overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939b10b58?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Chapel" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-navy">Campus Chapel</h3>
+                        <p class="text-sm text-gray-600">Multi-faith spiritual center</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item card overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Admin Building" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-navy">Admin Building</h3>
+                        <p class="text-sm text-gray-600">Central administration hub</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Events -->
+    <section class="page-section bg-offwhite">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-serif font-bold text-navy section-title">Campus Pulse</h2>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                    Stay updated with the latest news, events, and announcements from across our campus.
+                </p>
+            </div>
+            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- News Items -->
                 <div>
@@ -275,20 +1069,31 @@
                         <i class="fas fa-newspaper mr-3 text-gold"></i> Latest News
                     </h3>
                     <div class="space-y-4">
-                        <div class="news-card bg-white p-6 rounded-lg shadow-md border-l-4 border-gold">
-                            <h4 class="font-bold text-lg text-navy">University Launches New Research Initiative</h4>
-                            <p class="text-gray-600 text-sm mt-2">Government funding supports innovation in sustainable agriculture and renewable energy technologies.</p>
-                            <p class="text-xs text-gray-500 mt-3">Posted: June 15, 2023</p>
+                        <div class="news-article card p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-lg text-navy">University Launches New Research Initiative</h4>
+                                <span class="text-xs text-gray-500">Jun 15, 2023</span>
+                            </div>
+                            <p class="text-gray-600 mb-3">Government funding supports innovation in sustainable agriculture and renewable energy technologies.</p>
+                            <a href="#" class="text-gold hover:text-burgundy font-medium">Read More</a>
                         </div>
-                        <div class="news-card bg-white p-6 rounded-lg shadow-md border-l-4 border-gold">
-                            <h4 class="font-bold text-lg text-navy">Convocation Ceremony Dates Announced</h4>
-                            <p class="text-gray-600 text-sm mt-2">Join us for the grand celebration of academic achievements on July 20, 2023.</p>
-                            <p class="text-xs text-gray-500 mt-3">Posted: June 10, 2023</p>
+                        
+                        <div class="news-article card p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-lg text-navy">Convocation Ceremony Dates Announced</h4>
+                                <span class="text-xs text-gray-500">Jun 10, 2023</span>
+                            </div>
+                            <p class="text-gray-600 mb-3">Join us for the grand celebration of academic achievements on July 20, 2023.</p>
+                            <a href="#" class="text-gold hover:text-burgundy font-medium">Read More</a>
                         </div>
-                        <div class="news-card bg-white p-6 rounded-lg shadow-md border-l-4 border-gold">
-                            <h4 class="font-bold text-lg text-navy">International Partnership Agreement</h4>
-                            <p class="text-gray-600 text-sm mt-2">Collaboration with European universities to enhance academic exchange programs.</p>
-                            <p class="text-xs text-gray-500 mt-3">Posted: June 5, 2023</p>
+                        
+                        <div class="news-article card p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-lg text-navy">International Partnership Agreement</h4>
+                                <span class="text-xs text-gray-500">Jun 5, 2023</span>
+                            </div>
+                            <p class="text-gray-600 mb-3">Collaboration with European universities to enhance academic exchange programs.</p>
+                            <a href="#" class="text-gold hover:text-burgundy font-medium">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -299,20 +1104,46 @@
                         <i class="fas fa-calendar-alt mr-3 text-gold"></i> Upcoming Events
                     </h3>
                     <div class="space-y-4">
-                        <div class="news-card bg-white p-6 rounded-lg shadow-md border-l-4 border-burgundy">
-                            <h4 class="font-bold text-lg text-navy">Research Conference 2023</h4>
-                            <p class="text-gray-600 text-sm mt-2">Annual gathering of researchers and academics from across the region.</p>
-                            <p class="text-xs text-gray-500 mt-3"><i class="fas fa-clock mr-2"></i> June 25, 2023 | 9:00 AM</p>
+                        <div class="event-card card p-6">
+                            <div class="flex items-start mb-2">
+                                <div class="bg-burgundy text-white rounded-lg p-3 mr-4">
+                                    <span class="block text-lg font-bold">25</span>
+                                    <span class="block text-xs">JUN</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-navy">Research Conference 2023</h4>
+                                    <p class="text-gray-600">Annual gathering of researchers and academics from across the region.</p>
+                                    <p class="text-xs text-gray-500 mt-1"><i class="fas fa-clock mr-2"></i> 9:00 AM - 5:00 PM</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="news-card bg-white p-6 rounded-lg shadow-md border-l-4 border-burgundy">
-                            <h4 class="font-bold text-lg text-navy">Guest Lecture Series</h4>
-                            <p class="text-gray-600 text-sm mt-2">Distinguished Professor Smith on "Future of Digital Education"</p>
-                            <p class="text-xs text-gray-500 mt-3"><i class="fas fa-clock mr-2"></i> July 2, 2023 | 2:00 PM</p>
+                        
+                        <div class="event-card card p-6">
+                            <div class="flex items-start mb-2">
+                                <div class="bg-burgundy text-white rounded-lg p-3 mr-4">
+                                    <span class="block text-lg font-bold">02</span>
+                                    <span class="block text-xs">JUL</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-navy">Guest Lecture Series</h4>
+                                    <p class="text-gray-600">Distinguished Professor Smith on "Future of Digital Education"</p>
+                                    <p class="text-xs text-gray-500 mt-1"><i class="fas fa-clock mr-2"></i> 2:00 PM - 4:00 PM</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="news-card bg-white p-6 rounded-lg shadow-md border-l-4 border-burgundy">
-                            <h4 class="font-bold text-lg text-navy">Career Fair</h4>
-                            <p class="text-gray-600 text-sm mt-2">Connect with potential employers and explore career opportunities.</p>
-                            <p class="text-xs text-gray-500 mt-3"><i class="fas fa-clock mr-2"></i> July 8, 2023 | 10:00 AM</p>
+                        
+                        <div class="event-card card p-6">
+                            <div class="flex items-start mb-2">
+                                <div class="bg-burgundy text-white rounded-lg p-3 mr-4">
+                                    <span class="block text-lg font-bold">08</span>
+                                    <span class="block text-xs">JUL</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-navy">Career Fair</h4>
+                                    <p class="text-gray-600">Connect with potential employers and explore career opportunities.</p>
+                                    <p class="text-xs text-gray-500 mt-1"><i class="fas fa-clock mr-2"></i> 10:00 AM - 4:00 PM</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -320,24 +1151,240 @@
         </div>
     </section>
 
+    <!-- Testimonials -->
+    <section class="page-section bg-navy text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-serif font-bold text-white section-title">Student Voices</h2>
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+                    Hear from our students about their experiences at Inkphase University.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card card p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Student" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Aisha Mohammed</h4>
+                            <p class="text-sm text-gray-600">BSc Computer Science</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "The supportive environment and excellent faculty at Inkphase University helped me develop both technical skills and critical thinking abilities that set me apart in the industry."
+                    </p>
+                    <div class="stars mt-4 text-gold">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card card p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Student" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Emeka Okonkwo</h4>
+                            <p class="text-sm text-gray-600">MD Medicine</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "The clinical rotations and research opportunities provided by the university gave me hands-on experience that prepared me for my medical career."
+                    </p>
+                    <div class="stars mt-4 text-gold">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card card p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Student" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Fatima Bello</h4>
+                            <p class="text-sm text-gray-600">LLB Law</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "The law clinic and moot court competitions at Inkphase University enhanced my practical legal skills and prepared me for professional practice."
+                    </p>
+                    <div class="stars mt-4 text-gold">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alumni Spotlight -->
+    <section class="page-section bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-serif font-bold text-navy section-title">Our Distinguished Alumni</h2>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                    Meet our accomplished graduates who are making a difference in various fields worldwide.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="alumni-profile card text-center p-6">
+                    <div class="w-24 h-24 rounded-full bg-gray-300 mx-auto mb-4 overflow-hidden">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alumni" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-bold text-navy">Dr. Samuel Johnson</h4>
+                    <p class="text-sm text-gray-600 mb-2">MD, Class of 2005</p>
+                    <p class="text-sm text-gray-700">Chief Medical Officer, National Hospital</p>
+                </div>
+                
+                <div class="alumni-profile card text-center p-6">
+                    <div class="w-24 h-24 rounded-full bg-gray-300 mx-auto mb-4 overflow-hidden">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Alumni" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-bold text-navy">Prof. Grace Okafor</h4>
+                    <p class="text-sm text-gray-600 mb-2">PhD Economics, Class of 2003</p>
+                    <p class="text-sm text-gray-700">Director, Central Bank of Nigeria</p>
+                </div>
+                
+                <div class="alumni-profile card text-center p-6">
+                    <div class="w-24 h-24 rounded-full bg-gray-300 mx-auto mb-4 overflow-hidden">
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Alumni" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-bold text-navy">Amb. Kingsley Eze</h4>
+                    <p class="text-sm text-gray-600 mb-2">MA International Relations, Class of 2007</p>
+                    <p class="text-sm text-gray-700">Nigerian Ambassador to France</p>
+                </div>
+                
+                <div class="alumni-profile card text-center p-6">
+                    <div class="w-24 h-24 rounded-full bg-gray-300 mx-auto mb-4 overflow-hidden">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Alumni" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-bold text-navy">Dr. Adaora Nwankwo</h4>
+                    <p class="text-sm text-gray-600 mb-2">PhD Physics, Class of 2009</p>
+                    <p class="text-sm text-gray-700">Senior Research Scientist, NASA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="page-section bg-burgundy text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="stats-card card p-6 text-center">
+                    <div class="stats-number">25,000+</div>
+                    <h3 class="text-xl font-bold text-white">Students</h3>
+                    <p class="text-gray-300">From 36 states and 15 countries</p>
+                </div>
+                
+                <div class="stats-card card p-6 text-center">
+                    <div class="stats-number">1,200+</div>
+                    <h3 class="text-xl font-bold text-white">Faculty Members</h3>
+                    <p class="text-gray-300">With PhDs from top universities</p>
+                </div>
+                
+                <div class="stats-card card p-6 text-center">
+                    <div class="stats-number">50+</div>
+                    <h3 class="text-xl font-bold text-white">Programs</h3>
+                    <p class="text-gray-300">Undergraduate and graduate degrees</p>
+                </div>
+                
+                <div class="stats-card card p-6 text-center">
+                    <div class="stats-number">98%</div>
+                    <h3 class="text-xl font-bold text-white">Employment Rate</h3>
+                    <p class="text-gray-300">Graduates employed within 6 months</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnerships -->
+    <section class="page-section partnership-logos text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-serif font-bold text-white section-title">Global Partnerships</h2>
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+                    We collaborate with leading institutions worldwide to enhance our academic programs and research initiatives.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+                <div class="partner-logo flex items-center justify-center h-16 bg-white bg-opacity-10 rounded-lg p-4">
+                    <img src="https://placehold.co/150x60/ffffff/0a1e3f?text=Oxford" alt="Oxford University" class="h-8">
+                </div>
+                
+                <div class="partner-logo flex items-center justify-center h-16 bg-white bg-opacity-10 rounded-lg p-4">
+                    <img src="https://placehold.co/150x60/ffffff/0a1e3f?text=Harvard" alt="Harvard University" class="h-8">
+                </div>
+                
+                <div class="partner-logo flex items-center justify-center h-16 bg-white bg-opacity-10 rounded-lg p-4">
+                    <img src="https://placehold.co/150x60/ffffff/0a1e3f?text=MIT" alt="MIT" class="h-8">
+                </div>
+                
+                <div class="partner-logo flex items-center justify-center h-16 bg-white bg-opacity-10 rounded-lg p-4">
+                    <img src="https://placehold.co/150x60/ffffff/0a1e3f?text=Stanford" alt="Stanford" class="h-8">
+                </div>
+                
+                <div class="partner-logo flex items-center justify-center h-16 bg-white bg-opacity-10 rounded-lg p-4">
+                    <img src="https://placehold.co/150x60/ffffff/0a1e3f?text=Cambridge" alt="Cambridge" class="h-8">
+                </div>
+                
+                <div class="partner-logo flex items-center justify-center h-16 bg-white bg-opacity-10 rounded-lg p-4">
+                    <img src="https://placehold.co/150x60/ffffff/0a1e3f?text=Yale" alt="Yale" class="h-8">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="page-section bg-lightGold">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-serif font-bold text-navy mb-4">Stay Connected</h2>
+                <p class="text-lg text-gray-700 mb-8">
+                    Subscribe to our newsletter to receive updates on admissions, events, and news from Inkphase University.
+                </p>
+                
+                <form class="flex flex-col sm:flex-row gap-4">
+                    <input type="email" placeholder="Enter your email address" class="newsletter-input flex-grow px-4 py-3 rounded-lg">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Quick Actions -->
-    <section class="py-16 bg-navy text-white">
+    <section class="page-section bg-navy text-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-serif font-bold text-center mb-12">Quick Access</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <a href="#" class="bg-white bg-opacity-10 p-6 rounded-lg text-center hover:bg-opacity-20 transition">
+                <a href="#" class="quick-action card bg-white bg-opacity-10 p-6 rounded-lg text-center hover:bg-opacity-20 transition">
                     <i class="fas fa-user-graduate text-3xl text-gold mb-3"></i>
                     <h3 class="font-semibold">Student Portal</h3>
                 </a>
-                <a href="#" class="bg-white bg-opacity-10 p-6 rounded-lg text-center hover:bg-opacity-20 transition">
+                <a href="#" class="quick-action card bg-white bg-opacity-10 p-6 rounded-lg text-center hover:bg-opacity-20 transition">
                     <i class="fas fa-chalkboard-teacher text-3xl text-gold mb-3"></i>
                     <h3 class="font-semibold">Staff Portal</h3>
                 </a>
-                <a href="#" class="bg-white bg-opacity-10 p-6 rounded-lg text-center hover:bg-opacity-20 transition">
+                <a href="#" class="quick-action card bg-white bg-opacity-10 p-6 rounded-lg text-center hover:bg-opacity-20 transition">
                     <i class="fas fa-book text-3xl text-gold mb-3"></i>
                     <h3 class="font-semibold">Library</h3>
                 </a>
-                <a href="#" class="bg-white bg-opacity-10 p-6 rounded-lg text-center hover:bg-opacity-20 transition">
+                <a href="#" class="quick-action card bg-white bg-opacity-10 p-6 rounded-lg text-center hover:bg-opacity-20 transition">
                     <i class="fas fa-file-invoice text-3xl text-gold mb-3"></i>
                     <h3 class="font-semibold">Admissions</h3>
                 </a>
@@ -355,10 +1402,18 @@
                         A government-accredited institution committed to academic excellence and national development.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-300 hover:text-gold"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-gray-300 hover:text-gold"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-300 hover:text-gold"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-300 hover:text-gold"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon text-gray-300 hover:text-gold w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon text-gray-300 hover:text-gold w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon text-gray-300 hover:text-gold w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon text-gray-300 hover:text-gold w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
                     </div>
                 </div>
                 
@@ -370,6 +1425,7 @@
                         <li><a href="#" class="text-gray-300 hover:text-gold">Admissions</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-gold">Research</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-gold">Library</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-gold">Campus Life</a></li>
                     </ul>
                 </div>
                 
@@ -381,6 +1437,7 @@
                         <li><a href="#" class="text-gray-300 hover:text-gold">Tenders</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-gold">Vacancies</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-gold">Official Gazette</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-gold">Policies</a></li>
                     </ul>
                 </div>
                 
@@ -390,6 +1447,7 @@
                         <p><i class="fas fa-map-marker-alt mr-2"></i> Plot 123, University Avenue, Federal Capital Territory</p>
                         <p><i class="fas fa-phone mr-2"></i> +234 800 UNIVERSITY</p>
                         <p><i class="fas fa-envelope mr-2"></i> info@inkphase.edu.ng</p>
+                        <p><i class="fas fa-clock mr-2"></i> Mon-Fri: 8:00 AM - 5:00 PM</p>
                     </address>
                 </div>
             </div>
@@ -435,6 +1493,87 @@
                 menu.classList.remove('open');
             }
         });
+
+        // Dropdown menu functionality
+        document.querySelectorAll('.group').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.querySelector('.dropdown-menu').classList.add('show');
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.querySelector('.dropdown-menu').classList.remove('show');
+            });
+        });
+
+        // Mobile dropdown toggle
+        document.querySelectorAll('.mobile-dropdown-toggle').forEach(button => {
+            button.addEventListener('click', function() {
+                const dropdown = this.nextElementSibling;
+                dropdown.classList.toggle('show');
+                
+                // Rotate chevron icon
+                const icon = this.querySelector('i');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Cookie consent
+        function acceptCookies() {
+            document.getElementById('cookieConsent').style.display = 'none';
+            localStorage.setItem('cookiesAccepted', 'true');
+        }
+        
+        if (!localStorage.getItem('cookiesAccepted')) {
+            document.getElementById('cookieConsent').style.display = 'flex';
+        }
+
+        // Accessibility functions
+        function increaseTextSize() {
+            document.body.style.fontSize = '1.1em';
+        }
+        
+        function decreaseTextSize() {
+            document.body.style.fontSize = '1em';
+        }
+        
+        function toggleHighContrast() {
+            document.body.classList.toggle('high-contrast');
+        }
+
+        // Add high contrast CSS when enabled
+        if (document.body.classList.contains('high-contrast')) {
+            const style = document.createElement('style');
+            style.innerHTML = `
+                .high-contrast * {
+                    background: white !important;
+                    color: black !important;
+                    border: 2px solid black !important;
+                }
+                .high-contrast a {
+                    text-decoration: underline !important;
+                }
+            `;
+            document.head.appendChild(style);
+        }
     </script>
 </body>
 </html>
