@@ -262,7 +262,7 @@
     <!-- Header with Navigation -->
     <header class="bg-navy text-white sticky top-0 z-50 shadow-lg">
         <!-- Government Seal Banner -->
-        <div class="bg-gradient-to-r from-burgundy to-navy py-2 px-4 text-center">
+        <div class="transition-banner py-2 px-4 text-center">
             <div class="flex items-center justify-center space-x-2">
                 <i class="fas fa-award text-xl text-gold"></i>
                 <span class="font-semibold">Officially Adopted by Federal Government • University Status Achieved</span>
@@ -302,6 +302,18 @@
                                 <a href="#library" class="block px-4 py-2 hover:bg-lightGold">Library</a>
                             </div>
                         </li>
+                        <li class="relative group">
+                            <a href="#" class="nav-link hover:text-gold transition flex items-center">
+                                Administration <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="#leadership" class="block px-4 py-2 hover:bg-lightGold">Leadership</a>
+                                <a href="#council" class="block px-4 py-2 hover:bg-lightGold">Governing Council</a>
+                                <a href="#tenders" class="block px-4 py-2 hover:bg-lightGold">Tenders</a>
+                                <a href="#vacancies" class="block px-4 py-2 hover:bg-lightGold">Vacancies</a>
+                                <a href="#gazette" class="block px-4 py-2 hover:bg-lightGold">Official Gazette</a>
+                            </div>
+                        </li>
                         <li><a href="#student-life" class="nav-link hover:text-gold transition">Student Life</a></li>
                         <li><a href="#health" class="nav-link hover:text-gold transition">Health Services</a></li>
                         <li><a href="#research" class="nav-link hover:text-gold transition">Research</a></li>
@@ -333,11 +345,23 @@
                             <li><a href="#library" class="block py-1 text-sm hover:text-gold">Library</a></li>
                         </ul>
                     </li>
-                    <li><a href="#student-life" class="block py-2 hover:text-gold">Student Life</a></li>
-                    <li><a href="#health" class="block py-2 hover:text-gold">Health Services</a></li>
-                    <li><a href="#research" class="block py-2 hover:text-gold">Research</a></li>
-                    <li><a href="#gallery" class="block py-2 hover:text-gold">Gallery</a></li>
-                    <li><a href="#contact" class="block py-2 hover:text-gold">Contact</a></li>
+                    <li class="border-t border-gray-700 pt-2">
+                        <a href="#" class="block py-2 hover:text-gold flex justify-between items-center">
+                            Administration <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="ml-4 space-y-1 mt-1">
+                            <li><a href="#leadership" class="block py-1 text-sm hover:text-gold">Leadership</a></li>
+                            <li><a href="#council" class="block py-1 text-sm hover:text-gold">Governing Council</a></li>
+                            <li><a href="#tenders" class="block py-1 text-sm hover:text-gold">Tenders</a></li>
+                            <li><a href="#vacancies" class="block py-1 text-sm hover:text-gold">Vacancies</a></li>
+                            <li><a href="#gazette" class="block py-1 text-sm hover:text-gold">Official Gazette</a></li>
+                        </ul>
+                    </li>
+                    <li class="border-t border-gray-700 pt-2"><a href="#student-life" class="block py-2 hover:text-gold">Student Life</a></li>
+                    <li class="border-t border-gray-700 pt-2"><a href="#health" class="block py-2 hover:text-gold">Health Services</a></li>
+                    <li class="border-t border-gray-700 pt-2"><a href="#research" class="block py-2 hover:text-gold">Research</a></li>
+                    <li class="border-t border-gray-700 pt-2"><a href="#gallery" class="block py-2 hover:text-gold">Gallery</a></li>
+                    <li class="border-t border-gray-700 pt-2"><a href="#contact" class="block py-2 hover:text-gold">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -347,7 +371,7 @@
     <section class="relative bg-gradient-to-r from-navy to-burgundy text-white py-32">
         <img src="https://images.unsplash.com/photo-1562774053-da3b142c6e3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" class="absolute inset-0 w-full h-full object-cover opacity-30">
         <div class="hero-overlay absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
-        <div class="container mx-auto px-4 text-center relative z-10">
+        <div class="container mx-auto px-4 relative z-10 text-center">
             <h1 class="text-4xl md:text-6xl font-serif font-bold mb-6">Inkphase University</h1>
             <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">A Government-Accredited Institution of Excellence</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
@@ -1448,24 +1472,24 @@
             
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Freshers Column -->
-                <div class="portal-column card p-8">
+                <div class="card p-8 text-center">
                     <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-user-plus text-2xl text-gold"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-navy mb-4 text-center">Freshers</h3>
-                    <p class="text-gray-700 mb-6 text-center">
+                    <h3 class="text-xl font-bold text-navy mb-4">Freshers</h3>
+                    <p class="text-gray-700 mb-6">
                         For new students applying for admission and orientation.
                     </p>
                     <a href="#" class="btn btn-primary w-full">Apply Now</a>
                 </div>
                 
                 <!-- Returning Students Column -->
-                <div class="portal-column card p-8">
+                <div class="card p-8 text-center">
                     <div class="w-16 h-16 bg-burgundy rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-user-graduate text-2xl text-gold"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-navy mb-4 text-center">Returning Students</h3>
-                    <p class="text-gray-700 mb-6 text-center">
+                    <h3 class="text-xl font-bold text-navy mb-4">Returning Students</h3>
+                    <p class="text-gray-700 mb-6">
                         Login using Matric Number/JAMB Number and Last Name.
                     </p>
                     <div class="space-y-4">
@@ -1476,12 +1500,12 @@
                 </div>
                 
                 <!-- Part-Time Students Column -->
-                <div class="portal-column card p-8">
+                <div class="card p-8 text-center">
                     <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-user-clock text-2xl text-navy"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-navy mb-4 text-center">Part-Time Students</h3>
-                    <p class="text-gray-700 mb-6 text-center">
+                    <h3 class="text-xl font-bold text-navy mb-4">Part-Time Students</h3>
+                    <p class="text-gray-700 mb-6">
                         Special login for part-time students.
                     </p>
                     <div class="space-y-4">
@@ -1499,328 +1523,3 @@
                     <p class="text-gray-700 mb-6">Secure login for university employees</p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
                         <input type="text" placeholder="Staff ID" class="px-4 py-3 border border-gray-300 rounded-lg">
-                        <input type="password" placeholder="Password" class="px-4 py-3 border border-gray-300 rounded-lg">
-                        <button class="btn btn-secondary">Staff Login</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Campus Gallery -->
-    <section id="gallery" class="py-16 bg-offwhite">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-serif font-bold text-navy section-title">Campus Gallery</h2>
-                <p class="text-lg text-gray-700 max-w-3xl mx-auto">
-                    Explore our beautiful campus facilities and vibrant student life through our gallery.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <!-- Library -->
-                <div class="gallery-item card overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1495640388908-05fa85288e61?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Main Library" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-navy">Main Library</h3>
-                        <p class="text-sm text-gray-600">State-of-the-art learning resources</p>
-                    </div>
-                </div>
-                
-                <!-- Lecture Halls -->
-                <div class="gallery-item card overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Lecture Halls" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-navy">Lecture Halls</h3>
-                        <p class="text-sm text-gray-600">Modern classrooms with technology</p>
-                    </div>
-                </div>
-                
-                <!-- Student Housing -->
-                <div class="gallery-item card overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1562774053-b07e54358753?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Student Housing" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-navy">Student Housing</h3>
-                        <p class="text-sm text-gray-600">Comfortable living spaces</p>
-                    </div>
-                </div>
-                
-                <!-- Sports Complex -->
-                <div class="gallery-item card overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1581578021424-ebdc0b6bc2d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sports Complex" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-navy">Sports Complex</h3>
-                        <p class="text-sm text-gray-600">Recreation and fitness facilities</p>
-                    </div>
-                </div>
-                
-                <!-- Laboratories -->
-                <div class="gallery-item card overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Laboratories" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-navy">Laboratories</h3>
-                        <p class="text-sm text-gray-600">Cutting-edge research equipment</p>
-                    </div>
-                </div>
-                
-                <!-- Campus Cafeteria -->
-                <div class="gallery-item card overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Campus Cafeteria" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-navy">Campus Cafeteria</h3>
-                        <p class="text-sm text-gray-600">Healthy meals for students</p>
-                    </div>
-                </div>
-                
-                <!-- Campus Chapel -->
-                <div class="gallery-item card overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Campus Chapel" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-navy">Campus Chapel</h3>
-                        <p class="text-sm text-gray-600">Multi-faith spiritual center</p>
-                    </div>
-                </div>
-                
-                <!-- Administration Building -->
-                <div class="gallery-item card overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1581578021424-ebdc0b6bc2d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Administration Building" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-navy">Admin Building</h3>
-                        <p class="text-sm text-gray-600">Central administration hub</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-serif font-bold text-navy section-title">Contact Us</h2>
-                <p class="text-lg text-gray-700 max-w-3xl mx-auto">
-                    Reach out to us for inquiries, support, or collaboration opportunities.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Contact Information -->
-                <div class="space-y-8">
-                    <div class="flex items-start">
-                        <div class="bg-navy text-white rounded-lg w-12 h-12 flex items-center justify-center mr-4">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-navy mb-2">Our Campus</h3>
-                            <p class="text-gray-700">Plot 123, University Avenue</p>
-                            <p class="text-gray-700">Federal Capital Territory, Abuja</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start">
-                        <div class="bg-burgundy text-white rounded-lg w-12 h-12 flex items-center justify-center mr-4">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-navy mb-2">Call Us</h3>
-                            <p class="text-gray-700">+234 800 INKPHASE</p>
-                            <p class="text-gray-700">+234 901 234 5678</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start">
-                        <div class="bg-gold text-navy rounded-lg w-12 h-12 flex items-center justify-center mr-4">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-navy mb-2">Email Us</h3>
-                            <p class="text-gray-700">info@inkphase.edu.ng</p>
-                            <p class="text-gray-700">admissions@inkphase.edu.ng</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start">
-                        <div class="bg-navy text-white rounded-lg w-12 h-12 flex items-center justify-center mr-4">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-navy mb-2">Office Hours</h3>
-                            <p class="text-gray-700">Monday - Friday: 8:00 AM - 5:00 PM</p>
-                            <p class="text-gray-700">Saturday: 9:00 AM - 1:00 PM</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Contact Form -->
-                <div class="card p-8">
-                    <h3 class="text-2xl font-bold text-navy mb-6">Send a Message</h3>
-                    <form class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent">
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
-                            <select id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent">
-                                <option>General Inquiry</option>
-                                <option>Admissions</option>
-                                <option>Academic Programs</option>
-                                <option>Research Collaboration</option>
-                                <option>Technical Support</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary w-full">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-burgundy text-white pt-16 pb-8">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-                <div>
-                    <h3 class="text-xl font-serif font-bold mb-4 text-gold">Inkphase University</h3>
-                    <p class="text-sm text-gray-300 mb-4">
-                        A government-accredited institution committed to academic excellence and national development.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-300 hover:text-gold"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-gray-300 hover:text-gold"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-300 hover:text-gold"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-300 hover:text-gold"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4 text-gold">Quick Links</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="text-gray-300 hover:text-gold">About Us</a></li>
-                        <li><a href="#faculties" class="text-gray-300 hover:text-gold">Faculties</a></li>
-                        <li><a href="#departments" class="text-gray-300 hover:text-gold">Departments</a></li>
-                        <li><a href="#admissions" class="text-gray-300 hover:text-gold">Admissions</a></li>
-                        <li><a href="#library" class="text-gray-300 hover:text-gold">Library</a></li>
-                        <li><a href="#research" class="text-gray-300 hover:text-gold">Research</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4 text-gold">Student Life</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#hostels" class="text-gray-300 hover:text-gold">Hostels & Facilities</a></li>
-                        <li><a href="#clubs" class="text-gray-300 hover:text-gold">Clubs & Societies</a></li>
-                        <li><a href="#sports" class="text-gray-300 hover:text-gold">Sports Complex</a></li>
-                        <li><a href="#counselling" class="text-gray-300 hover:text-gold">Counselling Services</a></li>
-                        <li><a href="#career" class="text-gray-300 hover:text-gold">Career Services</a></li>
-                        <li><a href="#health" class="text-gray-300 hover:text-gold">Health Services</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4 text-gold">Contact Info</h4>
-                    <address class="not-italic text-sm text-gray-300 space-y-2">
-                        <p><i class="fas fa-map-marker-alt mr-2"></i> Plot 123, University Avenue, Federal Capital Territory</p>
-                        <p><i class="fas fa-phone mr-2"></i> +234 800 INKPHASE</p>
-                        <p><i class="fas fa-envelope mr-2"></i> info@inkphase.edu.ng</p>
-                        <p><i class="fas fa-clock mr-2"></i> Mon-Fri: 8:00 AM - 5:00 PM</p>
-                    </address>
-                </div>
-            </div>
-            
-            <div class="pt-8 border-t border-gray-700 text-center text-sm text-gray-400">
-                <p>&copy; 2024 Inkphase University. All rights reserved. | 
-                   <a href="#" class="hover:text-gold">Privacy Policy</a> | 
-                   <a href="#" class="hover:text-gold">Terms of Service</a> | 
-                   <a href="#" class="hover:text-gold">Accessibility</a> | 
-                   <a href="#" class="hover:text-gold">Accreditation</a>
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Toggle department lists
-        document.querySelectorAll('.toggle-departments').forEach(button => {
-            button.addEventListener('click', function() {
-                const targetId = this.getAttribute('data-target');
-                const list = document.getElementById(targetId);
-                list.classList.toggle('open');
-                
-                // Rotate chevron icon
-                const icon = this.querySelector('i');
-                icon.classList.toggle('fa-chevron-down');
-                icon.classList.toggle('fa-chevron-up');
-            });
-        });
-
-        // Mobile menu toggle
-        document.getElementById('mobileMenuButton').addEventListener('click', function() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('open');
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const menu = document.getElementById('mobileMenu');
-            const button = document.getElementById('mobileMenuButton');
-            
-            if (!menu.contains(event.target) && !button.contains(event.target)) {
-                menu.classList.remove('open');
-            }
-        });
-
-        // Dropdown menu functionality
-        document.querySelectorAll('.group').forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.querySelector('.dropdown-menu').classList.add('open');
-            });
-            
-            item.addEventListener('mouseleave', function() {
-                this.querySelector('.dropdown-menu').classList.remove('open');
-            });
-        });
-
-        // Mobile dropdown toggle
-        document.querySelectorAll('.mobile-dropdown-toggle').forEach(button => {
-            button.addEventListener('click', function() {
-                const dropdown = this.nextElementSibling;
-                dropdown.classList.toggle('open');
-                
-                // Rotate chevron icon
-                const icon = this.querySelector('i');
-                icon.classList.toggle('fa-chevron-down');
-                icon.classList.toggle('fa-chevron-up');
-            });
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
-</body>
-</html>
